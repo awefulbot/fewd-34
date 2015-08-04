@@ -17,11 +17,25 @@ DO NOT USE DIV OR SPANS for a while. HTML5 introduces all these structured tags;
   <head> <!-- header is good for meta stuff -->
     <meta charset="utf-8"> <!-- this declaration is what allows us to do emojis! -->
     <title>Flobot's Profile Page</title>
+    <!-- make sure you clearly indent your code and make it easy to read -->
+    <style>
+      body {
+        background-color: #eee;
+       }
+      header {
+        background-color: #fff;
+
+      }
+      img { float: right; }
+    </style>
   </head>
   <body>
     <header>
-      <h1>Florence Tsai</h1>
       <img src="http://placehold.it/200x200" alt="Look at me, I'm a gray box!" />
+      <h1>
+        Florence Tsai
+        <!-- if you change the line-height to 200px (same as the image height) then you will get its surrounding area to line up to the image, and the text will be vertically centered -->
+      </h1>
     </header>
     <main>
       <h2>Homework Assignments</h2>
