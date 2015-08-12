@@ -5,6 +5,16 @@ body {
   font-family: Lucida Grande, sans-serif;
   margin: 0;
 }
+
+input {
+  padding: 5px 10px;
+  border-radius: 3px;
+  box-shadow: none;
+  border: 2px solid red;
+}
+
+
+
   header {
     border-bottom-width:1px;
     border-bottom-style: solid;
