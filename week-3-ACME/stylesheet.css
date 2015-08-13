@@ -84,6 +84,50 @@ input {
     margin-left: auto;
     margin-right: auto;
   }
+
+    ul.product-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .product-list li {
+      display: block;
+      margin-top: 30px;
+    }
+      .product-img {
+        /* width: 200px; */
+        /* float: left; */
+        width: 25%;
+      }
+      .description-block {
+        display: inline-block;
+        width: 70%;
+        margin-left: 20px;
+        vertical-align: top;
+      }
+      .product-description {
+        margin-top: 0;
+      }
+      .button-row a {
+        border-radius: 5px;
+        padding: 5px 10px;
+        text-decoration: none;
+      }
+
+      .link-details {
+        display: inline-block;
+        color: #0000FF;
+        background-color: transparent;
+        border: 1px solid #0000FF;
+      }
+
+      .link-add-to-cart {
+        display: inline-block;
+        color: #FFFFFF;
+        background-color: #0000FF;
+      }
+
+
   footer {
     border-top-color: #CECECE;
     border-top-width: 1px;
