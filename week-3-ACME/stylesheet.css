@@ -12,8 +12,29 @@ input {
   box-shadow: none;
   border: 2px solid red;
 }
+  input:invalid {
+    border-color: red;
+  }
+  input:valid {
+    border-color: green;
+  }
+  input:focus {
+    border-color: black;
+    outline: 0;
+  }
 
+label {
+  width: 100px;
+  display: inline-block;
+}
+.block {
+  width: 100%;
+  display: block;
+}
 
+fieldset {
+  border:0;
+}
 
   header {
     border-bottom-width:1px;
