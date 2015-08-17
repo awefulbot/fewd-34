@@ -18,7 +18,7 @@
     <div class="panel circum">
       <div class="circle">
       </div>
-      <input type="text" class="circum-r" placeholder="radius">
+      <input type="text" class="circum-r" placeholder="radius" id="radius">
       <input type="text" class="circum-c" placeholder="circumference" disabled>
     </div>
 
@@ -46,7 +46,10 @@
 
 
       // Problem 02
-      // calcCircumference
+      function calcCircumference() {
+        var radius = parseInt(document.getElementById('radius').value)
+        return 2 * Math.PI * radius;
+      }
 
       // Problem 03
       // calcLongestSide
