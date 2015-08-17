@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="stylesheet.css" media="screen">
   </head>
   <body>
-    <h1>Fahrenheit to Celcius</h1>
+    <h1>Fahrenheit to celsius</h1>
 
     <div class="panel temp">
       <input type="text" class="temp-f" placeholder="℉" id="tempf">⇄
-      <input type="text" class="temp-c" placeholder="℃">
+      <input type="text" class="temp-c" placeholder="℃" id="tempc">
     </div>
 
     <h1>Radius to Circumference</h1>
@@ -32,18 +32,18 @@
 
     <script type="text/javascript" src="interface.js"></script>
     <script type="text/javascript">
-      // Your code goes here!
-      // functions are called:
-
       // Problem 01
-      // calcFahrenheitToCelcius
-      // calcCelciusToFarenheit
-      function calcFahrenheitToCelcius() {
-        // return 5;
-
+      function calcFahrenheitToCelsius() {
         var fahrenheit = parseInt(document.getElementById('tempf').value);
         return (fahrenheit - 32) * 5/9;
       }
+
+      function calcCelsiusToFarenheit() {
+        var celsius = parseInt(document.getElementById('tempc').value);
+        return celsius * (9/5) + 32;
+      }
+      // Question: Why do we not have to define where the answer appears? Seems strange.
+
 
       // Problem 02
       // calcCircumference

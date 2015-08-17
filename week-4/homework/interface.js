@@ -45,7 +45,7 @@ tempC.addEventListener('keyup', calcCtoF);
 
 function calcFtoC(event) {
   if (tempF.value.length > 0) {
-    tempC.value = calcFahrenheitToCelcius(tempF.value)
+    tempC.value = calcFahrenheitToCelsius(tempF.value)
   } else {
     tempC.value = '';
   }
@@ -53,7 +53,7 @@ function calcFtoC(event) {
 
 function calcCtoF(event) {
   if (tempC.value.length > 0) {
-    tempF.value = calcCelciusToFarenheit(tempC.value)
+    tempF.value = calcCelsiusToFarenheit(tempC.value)
   } else {
     tempF.value = '';
   }
