@@ -25,8 +25,8 @@
     <h1>Pythagorean Theorem</h1>
 
     <div class="panel py">
-      <input type="text" class="py-a" placeholder="A">
-      <input type="text" class="py-b" placeholder="B">
+      <input type="text" class="py-a" placeholder="A" id="a">
+      <input type="text" class="py-b" placeholder="B" id="b">
       <input type="text" class="py-c" placeholder="C" disabled>
     </div>
 
@@ -52,7 +52,11 @@
       }
 
       // Problem 03
-      // calcLongestSide
+        function calcLongestSide() {
+          var a = parseInt(document.getElementById('a').value);
+          var b = parseInt(document.getElementById('b').value);
+          return Math.sqrt((a * a) + (b * b));
+        }
     </script>
   </body>
 </html>
