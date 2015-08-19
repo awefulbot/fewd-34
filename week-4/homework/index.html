@@ -6,56 +6,46 @@
     <link rel="stylesheet" href="stylesheet.css" media="screen">
   </head>
   <body>
-    <h1>Fahrenheit to celsius</h1>
-
+    <h1>Fahrenheit to Celsius</h1>
     <div class="panel temp">
-      <input type="text" class="temp-f" placeholder="℉" id="tempf">⇄
-      <input type="text" class="temp-c" placeholder="℃" id="tempc">
+      <input type="text" class="temp-f" placeholder="℉">⇄
+      <input type="text" class="temp-c" placeholder="℃">
     </div>
 
     <h1>Radius to Circumference</h1>
-
     <div class="panel circum">
       <div class="circle">
       </div>
-      <input type="text" class="circum-r" placeholder="radius" id="radius">
+      <input type="text" class="circum-r" placeholder="radius">
       <input type="text" class="circum-c" placeholder="circumference" disabled>
     </div>
 
     <h1>Pythagorean Theorem</h1>
-
     <div class="panel py">
-      <input type="text" class="py-a" placeholder="A" id="a">
-      <input type="text" class="py-b" placeholder="B" id="b">
+      <input type="text" class="py-a" placeholder="A">
+      <input type="text" class="py-b" placeholder="B">
       <input type="text" class="py-c" placeholder="C" disabled>
     </div>
 
     <script type="text/javascript" src="interface.js"></script>
     <script type="text/javascript">
       // Problem 01
-      function calcFahrenheitToCelsius() {
-        var fahrenheit = parseInt(document.getElementById('tempf').value);
-        return (fahrenheit - 32) * 5/9;
+      function calcFahrenheitToCelsius(tempF) {
+        return (tempF - 32) * 5/9;
       }
 
-      function calcCelsiusToFarenheit() {
-        var celsius = parseInt(document.getElementById('tempc').value);
-        return celsius * (9/5) + 32;
+      function calcCelsiusToFarenheit(tempC) {
+        return tempC * (9/5) + 32;
       }
-      // Question: Why do we not have to define where the answer appears? Seems strange.
-
 
       // Problem 02
-      function calcCircumference() {
-        var radius = parseInt(document.getElementById('radius').value)
-        return 2 * Math.PI * radius;
+      function calcCircumference(r) {
+        return 2 * Math.PI * r;
       }
 
       // Problem 03
-        function calcLongestSide() {
-          var a = parseInt(document.getElementById('a').value);
-          var b = parseInt(document.getElementById('b').value);
-          return Math.sqrt((a * a) + (b * b));
+        function calcLongestSide(pyA,pyB) {
+          return Math.sqrt((pyA * pyA) + (pyB * pyB));
         }
     </script>
   </body>
