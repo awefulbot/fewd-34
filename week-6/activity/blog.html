@@ -98,13 +98,43 @@
       </div>
 
       <form id="new-comment">
-        <textarea id="new-comment-body" placeholder="Leave a comment..."></textarea>
+        <textarea id="new-comment-body" placeholder="Leave a comment...">Textareas have no value attributes</textarea>
         <button type="submit">Comment</button>
       </form>
     </main>
 
     <script>
-      // Your code goes here.
+      // LIKE BUTTON CODE
+        function addtoLikeNumber() {
+            // It's important to put the var locally inside the function because then it can be run, over and over again.
+            // Find number
+            var likeNumber = document.querySelector(".like-count");
+            // Parse number
+            var actualLikeNumber = parseInt(likeNumber.textContent);
+            // +1 to that number
+            var newLikeNumber = actualLikeNumber + 1;
+            // put it back into .like-count
+                likeNumber.textContent = newLikeNumber;
+        };
+        // Click on button
+        var likeButton = document.querySelector(".like-link");
+        likeButton.addEventListener("click", addtoLikeNumber);
+
+
+      // COMMENTS CODE HERE
+        // Type into comment box, press button
+        // Button grabs comment box value
+        var newCommentValue = document.querySelector("#new-comment-body").value;
+        // Put comment box value into a comment (.comment)
+            // Create div.comment and Give this new div a class
+            var newCommentDiv = document.createElement("div").classList.add("comment");
+
+            function newComment() {
+
+            };
+
+        // Insert .comment into #comments
+        // Something about defaultEvent
     </script>
   </body>
 </html>
