@@ -1,0 +1,71 @@
+<style>
+* { box-sizing: border-box; }
+body { font-size: 20px; font-family: sans-serif; }
+
+td { width: 100px; text-align: center; }
+.placeholder, button { width: 100%; }
+.placeholder { height: 23px; border: 1px solid #bababa; border-radius: 3px; }
+button { cursor: pointer; border: 1px solid #58c0f5; color: #58c0f5; background-color: white; font: inherit; }
+button { background-color: #58c0f5; color: white; border-radius: 3px; }
+</style>
+
+<table>
+  <tr>
+    <td>
+      <input type="text" class="first-operand placeholder">
+    </td>
+    <td>
+      <input type="text" class="second-operand placeholder">
+    </td>
+    <td>
+      =
+    </td>
+    <td>
+      <input type="text" class="result placeholder" disabled>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="add-button inverted-button">+</button>
+    </td>
+    <td>
+      <button class="subtract-button inverted-button">-</button>
+    </td>
+    <td>
+      <button class="multiply-button inverted-button">*</button>
+    </td>
+    <td>
+      <button class="divide-button inverted-button">/</button>
+    </td>
+  </tr>
+</table>
+
+<script>
+// Your code goes here.
+// 1. Click a button to Add
+
+
+//addButton.addEventListener("click", addNumbers);
+
+// 2. Create a function to add first and second input
+function addNumbers() {
+    var firstInput = document.querySelector(".first-operand");
+    var secondInput = document.querySelector(".second-operand");
+    var output = document.querySelector(".result");
+
+    var firstInputValue = parseInt(firstInput.value);
+    var secondInputValue = parseInt(secondInput.value);
+        // We need to get the VALUE of the inputs
+        // We need to turn the value into NUMBERS
+        // We need to do addition
+        output.value = firstInputValue + secondInputValue;
+
+        //note: if you define the variable inside the function, then it goes away after the function runs. That's why you couldn't call it before
+};
+
+var addButton = document.querySelector(".add-button");
+addButton.addEventListener("click", addNumbers);
+
+// 3. Put answer in third input
+
+</script>
