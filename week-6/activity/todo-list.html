@@ -1,6 +1,7 @@
 <form id="new-todo-item-form">
   <input type="text" id="new-todo-item-input" placeholder="What do you need to do?">
-  <button type="button">Create todo</button>
+  <!--button type="button">Create todo</button-->
+  <button type="submit">Create todo</button>
 </form>
 
 <hr>
@@ -11,8 +12,9 @@
 <script>
 // Your code goes here.
 
-
-function addListItem() {
+var form = document.querySelector("form");
+function addListItem(event) {
+    event.preventDefault();
     // Grab user input and store it
     var userInput = document.querySelector("#new-todo-item-input").value;
 
@@ -25,13 +27,14 @@ function addListItem() {
 
     // Append User Input to the list
     todoList.appendChild(listItem);
+
+    // Reset form -- watch where it's defined!
+    form.reset();
+
 };
 
-var button = document.querySelector("button");
-button.addEventListener("click", addListItem );
-// Define the button
-
 // Add EventListener to button
+form.addEventListener("submit", addListItem);
 
 </script>
 
