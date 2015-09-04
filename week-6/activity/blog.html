@@ -98,7 +98,7 @@
       </div>
 
       <form id="new-comment">
-        <textarea id="new-comment-body" placeholder="Leave a comment...">Textareas have no value attributes</textarea>
+        <textarea id="new-comment-body" placeholder="Leave a comment..."></textarea>
         <button type="submit">Comment</button>
       </form>
     </main>
@@ -124,17 +124,28 @@
       // COMMENTS CODE HERE
         // Type into comment box, press button
         // Button grabs comment box value
-        var newCommentValue = document.querySelector("#new-comment-body").value;
-        // Put comment box value into a comment (.comment)
-            // Create div.comment and Give this new div a class
-            var newCommentDiv = document.createElement("div").classList.add("comment");
 
-            function newComment() {
+            function newComment(event) {
+                // Put comment box value into a comment (.comment)
+                    // Create div.comment and Give this new div a class
+                    // Insert .comment into #comments
+                    // Something about defaultEvent
+                    var newCommentDiv = document.createElement("div");
+                    var commentList = document.querySelector("#comments");
+                    var newCommentValue = document.querySelector("#new-comment-body").value;
+                    newCommentDiv.value = newCommentValue;
+                    newCommentDiv.classList.add("comment");
+                    newCommentDiv.textContent = newCommentValue;
+                    commentList.appendChild(newCommentDiv);
+                    event.preventDefault();
 
-            };
+                    // Clears out old text input for new input
+                    document.querySelector("#new-comment-body").value="";
 
-        // Insert .comment into #comments
-        // Something about defaultEvent
+                };
+
+            var commentButton = document.querySelector("button");
+            commentButton.addEventListener("click", newComment);
     </script>
   </body>
 </html>
