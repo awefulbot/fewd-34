@@ -124,7 +124,6 @@
       // COMMENTS CODE HERE
         // Type into comment box, press button
         // Button grabs comment box value
-
             function newComment(event) {
                 // Put comment box value into a comment (.comment)
                     // Create div.comment and Give this new div a class
@@ -133,22 +132,30 @@
                     var newCommentDiv = document.createElement("div");
                     var commentList = document.querySelector("#comments");
                     var newCommentValue = document.querySelector("#new-comment-body").value;
-                    newCommentDiv.value = newCommentValue;
-                    newCommentDiv.classList.add("comment");
-                    newCommentDiv.textContent = newCommentValue;
-                    commentList.appendChild(newCommentDiv);
                     event.preventDefault();
 
-                    // Clears out old text input for new input
-                    document.querySelector("#new-comment-body").value="";
+                    // What if we give the comment box an error message if nothing is typed and the Comment button is clicked?
+                    if (newCommentValue !== "" ) {
+                        // STATEMENT 1
+                        // alert("Yo, There IS content!");
+                        // Create new comment with the textarea content
+                        newCommentDiv.value = newCommentValue;
+                        newCommentDiv.classList.add("comment");
+                        newCommentDiv.textContent = newCommentValue;
+                        commentList.appendChild(newCommentDiv);
+
+                        // Clears out old text input for new input
+                        document.querySelector("#new-comment-body").value="";
+                    } else {
+                        // STATEMENT 2
+                        // alert("When there is no content");
+                        alert("Yo, there is no content");
+                    }
+
                 };
 
             var commentButton = document.querySelector("button");
             commentButton.addEventListener("click", newComment);
-
-// What if we give the comment box an error message if nothing is typed and the Comment button is clicked?
-
-
 
 
     </script>
