@@ -72,25 +72,31 @@
 
     // Your code goes here.
 
-     function movieListItem(event) {
-        // event.preventDefault(); -- not needed bc it's not button type = submit
+// INSERTING THE CONTENT VIA ARRAY
+function movieList(movies) {
+    // event.preventDefault();
+    // alert(movies);
+    var movieTitleText = movies.title;
+    var movieReleaseDateText = movies.releaseDate;
+    var movieImageSrc = movies.image;
+
     // 1. Create LI
     // 2. give this LI a class
       var liMovie = document.createElement("li");
           liMovie.className = "movie";
-          liMovie.textContent = movies.title;
     // 3. Add the IMG into the LI
-      var image = document.createElement("img")
-          // image.setAttribute("src", )
+      var image = document.createElement("img");
+          image.setAttribute("src", movieImageSrc);
     // 4. Add DIV.MOVIE-TITLE
       var movieTitle = document.createElement("div");
           movieTitle.className = "movie-title";
+          movieTitle.textContent = movieTitleText;
     // 5. Add DIV.MOVIE-RELEASE-DATE
       var movieReleaseDate = document.createElement("div");
           movieReleaseDate.className = "movie-release-date";
-
+          movieReleaseDate.textContent = movieReleaseDateText;
     // Put everything into the LI
-        // liMovie.appendChild(image);
+        liMovie.appendChild(image);
         liMovie.appendChild(movieTitle);
         liMovie.appendChild(movieReleaseDate);
     // Put the LI into the UL
@@ -99,7 +105,7 @@
    };
 
   var button = document.querySelector("#list-movies");
-  button.addEventListener("click", movies.forEach(movieListItem));
+  button.addEventListener("click", movies.forEach(movieList));
     </script>
 
     <!--li class="movie">
