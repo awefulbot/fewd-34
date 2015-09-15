@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+      #movies {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .movie {
+        overflow: auto;
+      }
+      .movie:not(:last-child) {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #b6b6b6;
+      }
+      .movie img {
+        float: left;
+        width: 100px;
+        margin-right: 20px;
+      }
+      .movie-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: .5em;
+      }
+      .movie-release-date {
+        color: #b6b6b6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Movies</h1>
+
+    <button id="list-movies">listMovies()</button>
+
+    <ul id="movies">
+      <!--li class="movie">
+        <img src="http://ia.media-imdb.com/images/M/MV5BMjMxMTQ3MzMwMV5BMl5BanBnXkFtZTgwNTYxNzYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg">
+        <div class="movie-title">Cool Runnings</div>
+        <div class="movie-release-date">1993</div>
+      </li-->
+    </ul>
+
+    <script>
+    // Array of movies (don't change this)
+    var movies = [
+      {
+        title: "Cool Runnings",
+        releaseDate: "1993",
+        image: "http://ia.media-imdb.com/images/M/MV5BMjMxMTQ3MzMwMV5BMl5BanBnXkFtZTgwNTYxNzYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg"
+      },
+      {
+        title: "Terminator 2",
+        releaseDate: "1991",
+        image: "http://ia.media-imdb.com/images/M/MV5BMTg5NzUwMDU5NF5BMl5BanBnXkFtZTcwMjk2MDA4Mg@@._V1_SY317_CR18,0,214,317_AL_.jpg"
+      },
+      {
+        title: "Interstellar",
+        releaseDate: "2014",
+        image: "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX214_AL_.jpg"
+      }
+    ];
+
+
+    // Your code goes here.
+
+     function movieListItem(event) {
+        // event.preventDefault(); -- not needed bc it's not button type = submit
+    // 1. Create LI
+    // 2. give this LI a class
+      var liMovie = document.createElement("li");
+          liMovie.className = "movie";
+          liMovie.textContent = movies.title;
+    // 3. Add the IMG into the LI
+      var image = document.createElement("img")
+          // image.setAttribute("src", )
+    // 4. Add DIV.MOVIE-TITLE
+      var movieTitle = document.createElement("div");
+          movieTitle.className = "movie-title";
+    // 5. Add DIV.MOVIE-RELEASE-DATE
+      var movieReleaseDate = document.createElement("div");
+          movieReleaseDate.className = "movie-release-date";
+
+    // Put everything into the LI
+        // liMovie.appendChild(image);
+        liMovie.appendChild(movieTitle);
+        liMovie.appendChild(movieReleaseDate);
+    // Put the LI into the UL
+        var ul = document.querySelector("#movies");
+        ul.appendChild(liMovie);
+   };
+
+  var button = document.querySelector("#list-movies");
+  button.addEventListener("click", movies.forEach(movieListItem));
+    </script>
+
+    <!--li class="movie">
+      <img src="http://ia.media-imdb.com/images/M/MV5BMjMxMTQ3MzMwMV5BMl5BanBnXkFtZTgwNTYxNzYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg">
+      <div class="movie-title">Cool Runnings</div>
+      <div class="movie-release-date">1993</div>
+    </li-->
+    </script>
+  </body>
+</html>
