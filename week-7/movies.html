@@ -70,8 +70,6 @@
     ];
 
 
-    // Your code goes here.
-
 // INSERTING THE CONTENT VIA ARRAY
 function movieList(movies) {
     // event.preventDefault();
@@ -84,14 +82,14 @@ function movieList(movies) {
     // 2. give this LI a class
       var liMovie = document.createElement("li");
           liMovie.className = "movie";
-    // 3. Add the IMG into the LI
+    // 3. Create IMG
       var image = document.createElement("img");
           image.setAttribute("src", movieImageSrc);
-    // 4. Add DIV.MOVIE-TITLE
+    // 4. Creat DIV.MOVIE-TITLE
       var movieTitle = document.createElement("div");
           movieTitle.className = "movie-title";
           movieTitle.textContent = movieTitleText;
-    // 5. Add DIV.MOVIE-RELEASE-DATE
+    // 5. Create DIV.MOVIE-RELEASE-DATE
       var movieReleaseDate = document.createElement("div");
           movieReleaseDate.className = "movie-release-date";
           movieReleaseDate.textContent = movieReleaseDateText;
@@ -104,8 +102,12 @@ function movieList(movies) {
         ul.appendChild(liMovie);
    };
 
+function movieLoop() {
+    movies.forEach(movieList);
+}
+
   var button = document.querySelector("#list-movies");
-  button.addEventListener("click", movies.forEach(movieList));
+  button.addEventListener("click", movieLoop);
     </script>
 
     <!--li class="movie">
