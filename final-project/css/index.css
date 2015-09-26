@@ -1,8 +1,8 @@
 /** ======== RESET ======== **/
 html {
     background-color: #121B4F;
-    background-image: -webkit-linear-gradient(top right, #1C2E97, #121B4F); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
-    background-image:         linear-gradient(to bottom left, #1C2E97, #121B4F); /* Chrome 26, Firefox 16+, IE 10+, Opera */
+    background-image: -webkit-linear-gradient(top right, #050A28, #121B4F); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+    background-image:         linear-gradient(to bottom left, #050A28, #121B4F); /* Chrome 26, Firefox 16+, IE 10+, Opera */
     height: 100%;
     width: 100%;
 }
