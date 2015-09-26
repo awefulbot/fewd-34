@@ -17,7 +17,9 @@ p, h1, h2, h3 {
         font-weight: 100;
         text-align: center;
         font-size: 4.5em; /* do 4.5em when closer to finished */
+        margin-top: 0.75em;
     }
+
     p {
         font-weight: 200;
         text-align: center;
@@ -27,8 +29,14 @@ p, h1, h2, h3 {
 /** ======== PLANET COLUMN ======== **/
     .planet-circle {
         border-radius: 600px;
+        margin:0 auto;
     }
 
+        .default-color {background-color: #ccc;}
+        .default-size {
+            height: 200px;
+            width: 200px;
+        }
 
 
 /** ======== CONTROLS COLUMN ======== **/
@@ -40,6 +48,7 @@ p, h1, h2, h3 {
     border: 1px solid #ccc;
     display: inline-block;
     margin-right: 5px;
+    cursor: pointer;
 }
     .color-swatch.red {background-color: red;}
     .color-swatch.orange {background-color: orange;}

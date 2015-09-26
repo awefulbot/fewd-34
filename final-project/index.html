@@ -17,6 +17,8 @@
     <!-- Custom styles for this template -->
     <!--link href="starter-template.css" rel="stylesheet"-->
     <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,200,100' rel='stylesheet' type='text/css'>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -42,7 +44,7 @@
         <div class="row">
             <!-- PLANET -->
                 <div class="col-md-7 planet-column">
-                    <div class="planet-circle default-size">
+                    <div class="planet-circle default-color default-size">
                     </div>
                 </div>
             <!-- /PLANET -->
@@ -50,7 +52,8 @@
                 <div class="col-md-5 controls-column">
                     <!-- Slider for SIZE -->
                     <div class="control-section planet-size-control">
-                        <input id="range_01" class="irs-hidden-input" readonly="">
+                        <h3>Size</h3>
+                        <input type="text" id="size-slider" name="example_name" value="" />
                     </div>
                     <!-- Swatches for COLOR -->
                     <div class="control-section planet-color-controls">
@@ -84,14 +87,30 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/ion.rangeSlider.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/index.js"></script>
 
 
     <script>
         // SLIDER JS
-        $("#range_01").ionRangeSlider();
+        $(function () {
+
+            $("#size-slider").ionRangeSlider({
+                hide_min_max: true,
+                keyboard: true,
+                min: 0,
+                max: 5000,
+                from: 1000,
+                to: 4000,
+                type: 'single',
+                step: 1,
+                // prefix: "$",
+                grid: true
+            });
+
+        });
 
     </script>
 
