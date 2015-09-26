@@ -1,0 +1,56 @@
+/** ======== RESET ======== **/
+html {
+    background-color: #121B4F;
+    background-image: -webkit-linear-gradient(top right, #1C2E97, #121B4F); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+    background-image:         linear-gradient(to bottom left, #1C2E97, #121B4F); /* Chrome 26, Firefox 16+, IE 10+, Opera */
+    height: 100%;
+    width: 100%;
+}
+
+body {background-color: transparent;}
+
+p, h1, h2, h3 {
+    font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+}
+    h1 {
+        font-weight: 100;
+        text-align: center;
+        font-size: 4.5em; /* do 4.5em when closer to finished */
+    }
+    p {
+        font-weight: 200;
+        text-align: center;
+    }
+
+
+/** ======== PLANET COLUMN ======== **/
+    .planet-circle {
+        border-radius: 600px;
+    }
+
+
+
+/** ======== CONTROLS COLUMN ======== **/
+
+.color-swatch {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-right: 5px;
+}
+    .color-swatch.red {background-color: red;}
+    .color-swatch.orange {background-color: orange;}
+    .color-swatch.yellow {background-color: yellow;}
+    .color-swatch.green {background-color: green;}
+    .color-swatch.blue {background-color: blue;}
+
+
+
+/** ======== TESTING ======== **/
+/*
+    .planet-column {background-color: purple;height:300px;}
+    .controls-column {background-color: blue; height:200px;}
+*/

@@ -1,0 +1,54 @@
+<script>
+
+    // JS Recipes
+
+    // Adding/changingan element's value
+
+    // If the element is already on the page:
+    var el = document.querySelector("img");
+    el.setAttribute("src", "http://placeholder.it/200x200.png");
+
+    // If the element is NOT on the page (new el):
+    var el = document.createElement("img");
+    el.setAttribute("src", "http://placeholder.it/200x200.png");
+
+    // Adding/Changing an element's textContent
+    var el = document.querySelector("p");
+    el.textContent = "The quick brown fox...";
+
+    // Adding/Changing an element's textContent
+    var el = document.createElement("p");
+    el.textContent = "The quick brown fox...";
+
+</script>
+
+
+
+<!--
+
+ADDING AN ELEMENT TO THE PAGE W/ textContent
+================================================
+You need to know:
+- textContent – text
+- What type of element? - name
+- What's the parent element? - parent
+
+We can turn this into another function!
+
+-->
+
+<script>
+    // How can you tell when to put quotes?
+
+    var name = "li";
+    var text = "Go grocery shopping";
+    var parent="ul"
+
+function addElement(name, parent, text) {
+    var parentEl = document.querySelector(parent);
+    var el = document.createElement(name);
+    name.textContent = text;
+    parentEl.appendChild(el);
+}
+
+</script>

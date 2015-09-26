@@ -1,0 +1,80 @@
+<main>
+  <form id="movie-search-form">
+    <input type="text" id="query" placeholder="Movie title">
+    <button type="submit">Search</button>
+  </form>
+
+  <ul id="movie-list">
+  </ul>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+var sampleResult = {
+  "Search": [
+    {
+      "Title": "Cool Runnings",
+      "Type": "movie",
+      "Year": "1993",
+      "imdbID": "tt0106611"
+    }
+  ]
+}
+
+// Define how to get the title inside the array. "Search" is a property; and the array is a list of properties of Search. You can use "." or "[]" to access properties. If there is camel-casing or if there's space, the bracket notation is better and accommodates that.
+var titleName = sampleResult.Search[0].Title;
+
+// You need a function so that you can do something when you click the button
+function movieTitle() {
+  // Prevent button from submitting
+  // Create "li", put in movie name, append to "ul"
+  event.preventDefault();
+  $("<li>").text(titleName).appendTo("ul");
+}
+// Event listener
+$("button").on("click", movieTitle);
+</script>
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f1f0f5;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.4em;
+  }
+  main {
+    margin: 2em auto;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    background: white;
+    padding: 2em 3em;
+    max-width: 600px;
+  }
+  input,
+  button {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom-width: 2px;
+    border-radius: 5px; font-size: inherit;
+    padding: .5em 1em;
+    cursor: pointer;
+  }
+  input {
+    width: 70%;
+  }
+  button {
+    color: white;
+    width: 28%;
+    background-color: #04d78b;
+  }
+  form,
+  ul {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  li {
+    margin-top: 0.75em;
+    padding-top: 0.75em;
+  }
+</style>

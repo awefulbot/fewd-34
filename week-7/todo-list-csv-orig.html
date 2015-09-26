@@ -9,28 +9,23 @@
 </main>
 
 <script>
-var button = document.querySelector("button");
-// var todo = [input.split(",")];
-// we have to grab text input
-// identify it as a string
+var form = document.querySelector("#new-todo-item-form");
+var input = document.querySelector("#new-todo-item-input");
+var list = document.querySelector("#todo-list");
 
+function createItem(todo) {
+  var listItem = document.createElement("li");
+  listItem.textContent = todo;
+  list.appendChild(listItem);
+}
 
 function formSubmitted(event) {
   event.preventDefault();
-  // function createItem(input.value);
-  function createItem(todo) {
-    var listItem = document.createElement("li");
-    // original line listItem.textContent = todo;
-    var input = document.querySelector("#new-todo-item-input");
-    var form = document.querySelector("#new-todo-item-form");
-    var list = document.querySelector("#todo-list");
-    listItem.textContent = input.value;
-    list.appendChild(listItem);
-    };
+  createItem(input.value);
   form.reset();
 }
 
-button.addEventListener("submit", formSubmitted);
+form.addEventListener("submit", formSubmitted);
 </script>
 
 <style>
