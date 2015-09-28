@@ -15,21 +15,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <!--link href="starter-template.css" rel="stylesheet"-->
     <link href="css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="css/ion.rangeSlider.css" />
     <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,200,100' rel='stylesheet' type='text/css'>
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
   </head>
 
@@ -37,44 +26,67 @@
 
     <div class="container">
         <div class="starter-template">
-            <h1>Let's Make a Planet!</h1>
-                <p class="lead">Snazzy copy to come. Also, maybe a better title. Maybe.</p>
+            <h1>Planet Generator</h1>
+                <p class="lead">Visualize a planet and learn some fun facts 🚀</p>
                 <!--p class="lead">A FEWD-34 Project</p-->
         </div>
         <div class="row">
             <!-- PLANET -->
                 <div class="col-md-7 planet-column">
-                    <div class="planet-circle default-color default-size">
+                    <div class="planet-wrap">
+                        <div class="planet-v-alignment">
+                            <div class="planet-circle default-color default-size">
+                                <div class="ring"></div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- PLANET SIZE REFERENCE RINGS -->
+                    <div class="planet-size-rings">
+                        <div class="planet-size pluto"></div>
+                        <div class="planet-size mercury"></div>
+                        <div class="planet-size mars"></div>
+                        <div class="planet-size venus"></div>
+                        <div class="planet-size earth"></div>
+                        <div class="planet-size neptune"></div>
+                        <div class="planet-size uranus"></div>
+                        <div class="planet-size saturn"></div>
+                        <div class="planet-size jupiter"></div>
                     </div>
                 </div>
             <!-- /PLANET -->
             <!-- CONTROLS -->
                 <div class="col-md-5 controls-column">
                     <!-- Slider for SIZE -->
-                    <div class="control-section planet-size-control">
-                        <h3>Size</h3>
-                        <input type="text" id="size-slider" name="example_name" value="" />
-                    </div>
+                        <div class="control-section planet-size-control">
+                            <h3>Size</h3>
+                            <div class="clickable">
+                                <input type="text" id="size-slider" name="example_name" value="" />
+                            </div>
+                        </div>
                     <!-- Swatches for COLOR -->
-                    <div class="control-section planet-color-controls">
-                        <h3>Colors</h3>
-                        <div class="color-swatch red"></div>
-                        <div class="color-swatch orange"></div>
-                        <div class="color-swatch yellow"></div>
-                        <div class="color-swatch green"></div>
-                        <div class="color-swatch blue"></div>
-                    </div>
+                        <div class="control-section planet-color-controls">
+                            <h3>Colors</h3>
+                            <div class="color-swatch red"></div>
+                            <div class="color-swatch orange"></div>
+                            <div class="color-swatch yellow"></div>
+                            <div class="color-swatch green"></div>
+                            <div class="color-swatch blue"></div>
+                        </div>
                     <!-- Rings / No Rings -->
-                    <div class="control-section planet-ring-controls">
-                        <h3>Rings</h3>
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >Yes
-                        </label>
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked >No
-                        </label>
-                    </div>
+                        <div class="control-section planet-ring-controls">
+                            <h3>Rings</h3>
+                            <label>
+                                <input type="radio" name="optionsRadios" id="rings" value="Rings" checked >Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="optionsRadios" id="no-rings" value="No Rings" >No
+                            </label>
+                        </div>
                     <!-- Animation direction -->
+                        <!--div class="control-section planet-rotate-controls">
+                            <h3>Axis of Rotation</h3>
+                            <input type="text" id="size-slider" name="example_name" value="" />
+                        </div-->
                 </div>
             <!-- /CONTROLS -->
         </div>
@@ -90,29 +102,37 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="js/index.js"></script>
 
 
     <script>
         // SLIDER JS
-        $(function () {
+        // $(function () {
+        //     $("#size-slider").ionRangeSlider({
+        //         type: "single",
+        //         values: ["Mercury", "Mars", "Venus", "Earth", "Neptune", "Uranus", "Saturn", "Jupiter"],
+        //
+        //     });
+        //
+        // });
 
-            $("#size-slider").ionRangeSlider({
-                hide_min_max: true,
-                keyboard: true,
-                min: 0,
-                max: 5000,
-                from: 1000,
-                to: 4000,
-                type: 'single',
-                step: 1,
-                // prefix: "$",
-                grid: true
+        // REFERENCE
+            var $range = $("#size-slider");
+
+            $range.ionRangeSlider({
+                type: "single",
+                min: 1000,
+                max: 150000,
+                from: 75000
             });
 
-        });
+            $range.on("change", function () {
+                var $this = $(this),
+                value = $this.prop("value");
 
+                console.log("Value: " + value);
+            });
     </script>
+    <script src="js/index.js"></script>
 
   </body>
 </html>

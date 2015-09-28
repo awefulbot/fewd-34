@@ -27,16 +27,128 @@ p, h1, h2, h3 {
 
 
 /** ======== PLANET COLUMN ======== **/
+
+    .planet-column {
+        /* padding-top: 5em; */
+        position: relative; /* this is for the size reference div */
+        min-height: 400px;
+    }
+
+    .planet-wrap {
+        /* vertically center this totally messes with the ring though */
+            /*position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);*/
+    }
+
+    .planet-wrap {
+        /* vertically center this totally messes with the ring though */
+            /*position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);*/
+    }
     .planet-circle {
         border-radius: 600px;
         margin:0 auto;
+        /* transform: rotateX(0deg); */
+
     }
 
+        /** == DEFAULT SETTINGS == **/
         .default-color {background-color: #ccc;}
         .default-size {
-            height: 200px;
-            width: 200px;
+            height: 10em;
+            width: 10em;
         }
+
+        /** == SIZES == **/
+        .planet-circle.mercury {height: 100px; width: 100px;}
+        .planet-circle.mars {height: 150px; width: 150px;}
+        .planet-circle.venus {height: 200px; width: 200px;}
+        .planet-circle.earth {height: 250px; width: 250px;}
+        .planet-circle.neptune {height: 300px; width: 300px;}
+        .planet-circle.uranus {height: 350px; width: 350px;}
+        .planet-circle.saturn {height: 400px; width: 400px;}
+        .planet-circle.jupiter {height: 450px; width: 450px;}
+
+        /** == COLORS == **/
+        .planet-circle.red { background-color: red; }
+        .planet-circle.orange { background-color: orange; }
+        .planet-circle.yellow { background-color: yellow; }
+        .planet-circle.green { background-color: green; }
+        .planet-circle.blue { background-color: blue; }
+
+        /** == RINGS == **/
+        .ring {
+            width: 300px;
+            height: 300px;
+            margin-top: -5em;
+            margin-left: -5em;
+            border: 3em solid rgba(160, 147, 130, 0.7);
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform: rotateX(80deg);
+            animation-duration: 353.36998s; /* not sure what this does */
+            /** more stuff **/
+            transition-duration: .8s;
+            transition-timing-function: ease-in-out;
+            position: absolute;
+            /* top: 50%;
+            left: 50%; */
+            border-radius: 50%;
+        }
+
+            .ring:after {
+                border-radius:50%;
+                position: absolute; /* not sure what this does yet */
+                content:'';
+                top:50%;
+                left: 50%;
+                width:2.2em;
+                height: 2.2em;
+                margin-top: -1.1em; /* not sure if needed */
+                margin-left: -1.1em; /* not sure if needed */
+                border: 0.07em solid rgba(160, 147, 130, 0.5);
+                box-sizing: border-box; /* not sure if needed */
+            }
+
+        .planet-column {
+            transform-style: preserve-3d;
+        }
+
+        /** == PLANET SIZE REFERENCE == **/
+        .planet-size-rings {
+            position: absolute;
+
+            /* debug helper */
+            background: rgba(255,0,0,0.2);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .planet-size {
+            border-radius: 100%;
+            border: 1px solid #999;
+            /* position: absolute;
+            top:50%;
+            left: 50%;
+            display: block;
+            */
+            margin: 0 auto;
+        }
+
+            .planet-size.pluto {
+                height: 10em;
+                width: 10em;
+            }
+            .planet-size.pluto {
+                height: 10em;
+                width: 10em;
+            }
 
 
 /** ======== CONTROLS COLUMN ======== **/

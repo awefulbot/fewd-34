@@ -2,32 +2,31 @@
     $(".red").click(
         function() {
                 // alert("this will turn the planet red");
-                $(".planet-circle").toggleClass("red");
+                $(".planet-circle").addClass("red").removeClass("default-color orange yellow green blue");
         });
 
     $(".orange").click(
         function() {
                 // alert("this will turn the planet orange");
-                $(".planet-circle").toggleClass("orange");
-                //toggleClass
+                $(".planet-circle").addClass("orange").removeClass("default-color red yellow green blue");
         });
 
     $(".yellow").click(
         function() {
                 // alert("this will turn the planet yellow");
-                $(".planet-circle").toggleClass("yellow");
+                $(".planet-circle").addClass("yellow").removeClass("default-color red orange green blue");
         });
 
     $(".green").click(
         function() {
                 // alert("this will turn the planet green");
-                $(".planet-circle").toggleClass("green");
+                $(".planet-circle").addClass("green").removeClass("default-color red orange yellow blue");
         });
 
     $(".blue").click(
         function() {
                 // alert("this will turn the planet blue");
-                $(".planet-circle").toggleClass("blue");
+                $(".planet-circle").addClass("blue").removeClass("default-color red orange yellow green");
         });
 
 
