@@ -41,6 +41,9 @@ p, h1, h2, h3 {
     }
 
     .planet-wrap {
+        /*position: absolute;
+        transform-style: preserve-3d;
+        animation-duration: 353.36998s; /* not sure what this does */
     }
 
     .planet-circle {
@@ -63,6 +66,15 @@ p, h1, h2, h3 {
             width: 50px;
         }
 
+        /** == SIZES == **/
+        .planet-circle.mercury {height: 100px; width: 100px;}
+        .planet-circle.mars {height: 150px; width: 150px;}
+        .planet-circle.venus {height: 200px; width: 200px;}
+        .planet-circle.earth {height: 250px; width: 250px;}
+        .planet-circle.neptune {height: 300px; width: 300px;}
+        .planet-circle.uranus {height: 350px; width: 350px;}
+        .planet-circle.saturn {height: 400px; width: 400px;}
+        .planet-circle.jupiter {height: 450px; width: 450px;}
 
         /** == COLORS == **/
         .planet-circle.red { background-color: #EE5252; }
@@ -114,14 +126,19 @@ p, h1, h2, h3 {
         .planet-size {
             border-radius: 100%;
             border: 1px solid #999;
+            /* position: absolute;
+            top:50%;
+            left: 50%;
+            display: block;
+            */
             margin: 0 auto;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
+            /*font-size: 20px;*/
         }
 
-        /** == SIZES == **/
             .planet-size.pluto { height: 9px; width: 9px; }
             .planet-size.mercury { height: 22px; width: 22px; }
             .planet-size.mars { height: 30px; width: 30px; }
@@ -130,7 +147,7 @@ p, h1, h2, h3 {
             .planet-size.neptune { height: 232px; width: 232px; }
             .planet-size.uranus { height: 240px; width: 240px; }
             .planet-size.saturn { height: 548px; width: 548px; }
-            .planet-size.jupiter { height: 675px; width: 675px; }
+            .planet-size.jupiter { height: 650px; width: 650px; }
 
 
 /** ======== CONTROLS COLUMN ======== **/
@@ -139,6 +156,7 @@ p, h1, h2, h3 {
     height: 35px;
     width: 35px;
     border-radius: 100%;
+    /* border: 1px solid #ccc; */
     display: inline-block;
     margin-right: 10px;
     cursor: pointer;
@@ -149,10 +167,6 @@ p, h1, h2, h3 {
     .color-swatch.green {background-color: #51C17A;}
     .color-swatch.blue {background-color: #60A3E6;}
 
-
-.control-section {
-    margin-bottom: 35px;
-}
 
 
 /** ======== TESTING ======== **/

@@ -110,7 +110,7 @@
         // $(function () {
         //     $("#size-slider").ionRangeSlider({
         //         type: "single",
-        //         values: ["Mercury", "Mars", "Venus", "Earth", "Neptune", "Uranus", "Saturn", "Jupiter"],
+        //         values: ["Pluto (Dwarf Planet)","Mercury", "Mars", "Venus", "Earth", "Neptune", "Uranus", "Saturn", "Jupiter"],
         //
         //     });
         //
@@ -122,7 +122,7 @@
             $range.ionRangeSlider({
                 type: "single",
                 min: 1000,
-                max: 150000,
+                max: 140000,
                 from: 75000
             });
 
@@ -130,7 +130,13 @@
                 var $this = $(this),
                 value = $this.prop("value");
 
-                console.log("Value: " + value);
+                // console.log("Value: " + value);
+                // need to correlate pixels with size
+                var newPlanetSize = value / 207;
+                    // this seems to give a rough estimate on size
+                    $(".planet-circle").css("height", newPlanetSize).css("width",newPlanetSize);
+
+
             });
     </script>
     <script src="js/index.js"></script>
