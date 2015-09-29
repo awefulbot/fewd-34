@@ -82,15 +82,15 @@ p, h1, h2, h3 {
             border: 5em solid rgba(160, 147, 130, 0.7);
             animation-iteration-count: infinite;
             animation-timing-function: linear;
-            transform: rotateX(80deg) translateX(-200px) translateY(-150px);
+            transform: rotateX(80deg);
             animation-duration: 353.36998s; /* not sure what this does */
             /** more stuff **/
                 transition-duration: .8s;
                 transition-timing-function: ease-in-out;
                 position: absolute;
                 border-radius: 50%;
-                /*top: 35%;
-                left: 35%;*/
+                top: -25%;
+                left: -50%;
         }
             /* actually maybe THIS did ^ */
 

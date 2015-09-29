@@ -106,8 +106,19 @@
     <script src="js/ion.rangeSlider.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
+
     <script>
         // SLIDER JS
+        // $(function () {
+        //     $("#size-slider").ionRangeSlider({
+        //         type: "single",
+        //         values: ["Pluto (Dwarf Planet)","Mercury", "Mars", "Venus", "Earth", "Neptune", "Uranus", "Saturn", "Jupiter"],
+        //
+        //     });
+        //
+        // });
+
+        // REFERENCE
             var $range = $("#size-slider");
 
             $range.ionRangeSlider({
@@ -121,6 +132,7 @@
                 var $this = $(this),
                 value = $this.prop("value");
 
+                // console.log("Value: " + value);
                 // need to correlate pixels with size
                 var newPlanetSize = value / 207;
                     // this seems to give a rough estimate on size
@@ -132,10 +144,15 @@
                     var newplanetRingHeight = newPlanetSize * 1.25;
 
                     // to center elements, take parent - child / 2
-                        var planetHAlignment = parseInt($(".planet-v-alignment").css("width")); // parent container width
-                        var planetVAlignment = parseInt($(".planet-v-alignment").css("height")); // parent container height
-                        var newX = (planetHAlignment - newplanetRingWidth) / 2;
-                        var newY = (planetVAlignment - newplanetRingHeight) / 2;
+                        // var oldRingXCoor = $(".ring").css("width");
+                        // var oldRingXCoor = parseInt($(".ring").css("width"));
+                        //var oldRingXCoor = newPlanetSize
+                        var planetHAlignment = parseInt($(".planet-v-alignment").css("width"));
+                        // var oldRingYCoor = parseInt($(".ring").css("height"));
+                        // var oldRingYCoor = newPlanetSize
+                        var planetVAlignment = parseInt($(".planet-v-alignment").css("height"));
+                        var newX = (planetHAlignment - newPlanetSize) / 2;
+                        var newY = (planetVAlignment - newPlanetSize) / 2;
 
                                     $(planetRings).css({
                                         "height" : newplanetRingHeight + "px",
