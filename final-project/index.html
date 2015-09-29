@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/index.css" rel="stylesheet">
+    <link href="css/index-test.css" rel="stylesheet">
     <link rel="stylesheet" href="css/ion.rangeSlider.css" />
     <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,200,100' rel='stylesheet' type='text/css'>
@@ -36,11 +37,12 @@
                     <div class="planet-wrap">
                         <div class="planet-v-alignment">
                             <div class="planet-circle default-color default-size">
-                                <div class="ring"></div>
+                                <!-- <div class="ring"></div> -->
                             </div>
                         </div>
                     </div>
                 <!-- PLANET SIZE REFERENCE RINGS -->
+                <div class="planet-size-wrap">
                     <div class="planet-size-rings">
                         <div class="planet-size pluto"></div>
                         <div class="planet-size mercury"></div>
@@ -52,6 +54,7 @@
                         <div class="planet-size saturn"></div>
                         <div class="planet-size jupiter"></div>
                     </div>
+                </div>
                 </div>
             <!-- /PLANET -->
             <!-- CONTROLS -->
@@ -76,10 +79,10 @@
                         <div class="control-section planet-ring-controls">
                             <h3>Rings</h3>
                             <label>
-                                <input type="radio" name="optionsRadios" id="rings" value="Rings" checked >Yes
+                                <input type="radio" name="optionsRadios" id="rings" value="Rings" >Yes
                             </label>
                             <label>
-                                <input type="radio" name="optionsRadios" id="no-rings" value="No Rings" >No
+                                <input type="radio" name="optionsRadios" id="no-rings" value="No Rings" checked >No
                             </label>
                         </div>
                     <!-- Animation direction -->
@@ -100,8 +103,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/ion.rangeSlider.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
     <script>

@@ -2,32 +2,32 @@
     $(".red").click(
         function() {
                 // alert("this will turn the planet red");
-                $(".planet-circle").toggleClass("red");
+                $(".planet-circle").addClass("red").removeClass("orange yellow green blue");
         });
 
     $(".orange").click(
         function() {
                 // alert("this will turn the planet orange");
-                $(".planet-circle").toggleClass("orange");
+                $(".planet-circle").addClass("orange").removeClass("red yellow green blue");
                 //toggleClass
         });
 
     $(".yellow").click(
         function() {
                 // alert("this will turn the planet yellow");
-                $(".planet-circle").toggleClass("yellow");
+                $(".planet-circle").addClass("yellow").removeClass("orange red green blue");
         });
 
     $(".green").click(
         function() {
                 // alert("this will turn the planet green");
-                $(".planet-circle").toggleClass("green");
+                $(".planet-circle").addClass("green").removeClass("orange yellow red blue");
         });
 
     $(".blue").click(
         function() {
                 // alert("this will turn the planet blue");
-                $(".planet-circle").toggleClass("blue");
+                $(".planet-circle").addClass("blue").removeClass("orange yellow green red");
         });
 
 
@@ -46,11 +46,11 @@
     // TOGGLING RINGS
     $("#rings").click(
         function() {
-                $(".ring").show();
+                $(".planet-circle").addClass("planet-circle-rings");
         });
     $("#no-rings").click(
         function() {
-                $(".ring").hide();
+            $(".planet-circle").removeClass("planet-circle-rings");
         });
 
 

@@ -27,32 +27,29 @@ p, h1, h2, h3 {
 
 
 /** ======== PLANET COLUMN ======== **/
-
     .planet-column {
         /* padding-top: 5em; */
         position: relative; /* this is for the size reference div */
         min-height: 400px;
+        transform-style: preserve-3d;
     }
 
     .planet-wrap {
-        /* vertically center this totally messes with the ring though */
-            /*position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);*/
+        /*position: absolute;
+        transform-style: preserve-3d;
+        animation-duration: 353.36998s; /* not sure what this does */
     }
 
-    .planet-wrap {
-        /* vertically center this totally messes with the ring though */
-            /*position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);*/
-    }
     .planet-circle {
+        /* testing it out -- should be okay due to CSS codepen ref */
+            position: absolute;
+            transform-style: preserve-3d;
+            top: 50%;
+            left: 50%;
+            /* holy shit this saved my life */
         border-radius: 600px;
         margin:0 auto;
-        /* transform: rotateX(0deg); */
+        transform: rotateX(0deg) translateX(-50%) translateY(-50%);
 
     }
 
@@ -74,14 +71,16 @@ p, h1, h2, h3 {
         .planet-circle.jupiter {height: 450px; width: 450px;}
 
         /** == COLORS == **/
-        .planet-circle.red { background-color: red; }
-        .planet-circle.orange { background-color: orange; }
-        .planet-circle.yellow { background-color: yellow; }
-        .planet-circle.green { background-color: green; }
-        .planet-circle.blue { background-color: blue; }
+        .planet-circle.red { background-color: #EE5252; }
+        .planet-circle.orange { background-color: #F3A253; }
+        .planet-circle.yellow { background-color: #F5EA65; }
+        .planet-circle.green { background-color: #51C17A; }
+        .planet-circle.blue { background-color: #60A3E6; }
 
         /** == RINGS == **/
-        .ring {
+        /* .ring */
+        .planet-circle-rings:after {
+            content:'';
             width: 300px;
             height: 300px;
             margin-top: -5em;
@@ -92,33 +91,21 @@ p, h1, h2, h3 {
             transform: rotateX(80deg);
             animation-duration: 353.36998s; /* not sure what this does */
             /** more stuff **/
-            transition-duration: .8s;
-            transition-timing-function: ease-in-out;
-            position: absolute;
-            /* top: 50%;
-            left: 50%; */
-            border-radius: 50%;
+                transition-duration: .8s;
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                border-radius: 50%;
         }
-
-            .ring:after {
-                border-radius:50%;
-                position: absolute; /* not sure what this does yet */
-                content:'';
-                top:50%;
-                left: 50%;
-                width:2.2em;
-                height: 2.2em;
-                margin-top: -1.1em; /* not sure if needed */
-                margin-left: -1.1em; /* not sure if needed */
-                border: 0.07em solid rgba(160, 147, 130, 0.5);
-                box-sizing: border-box; /* not sure if needed */
-            }
+            /* actually maybe THIS did ^ */
 
         .planet-column {
             transform-style: preserve-3d;
         }
 
         /** == PLANET SIZE REFERENCE == **/
+        .planet-size-wrap {
+            height: 100%;
+        }
         .planet-size-rings {
             position: absolute;
 
@@ -139,34 +126,40 @@ p, h1, h2, h3 {
             display: block;
             */
             margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            /*font-size: 20px;*/
         }
 
-            .planet-size.pluto {
-                height: 10em;
-                width: 10em;
-            }
-            .planet-size.pluto {
-                height: 10em;
-                width: 10em;
-            }
+            .planet-size.pluto { height: 9px; width: 9px; }
+            .planet-size.mercury { height: 22px; width: 22px; }
+            .planet-size.mars { height: 30px; width: 30px; }
+            .planet-size.venus { height: 55px; width: 55px; }
+            .planet-size.earth { height: 58px; width: 58px; }
+            .planet-size.neptune { height: 232px; width: 232px; }
+            .planet-size.uranus { height: 240px; width: 240px; }
+            .planet-size.saturn { height: 548px; width: 548px; }
+            .planet-size.jupiter { height: 650px; width: 650px; }
 
 
 /** ======== CONTROLS COLUMN ======== **/
 
 .color-swatch {
-    height: 20px;
-    width: 20px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+    /* border: 1px solid #ccc; */
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 10px;
     cursor: pointer;
 }
-    .color-swatch.red {background-color: red;}
-    .color-swatch.orange {background-color: orange;}
-    .color-swatch.yellow {background-color: yellow;}
-    .color-swatch.green {background-color: green;}
-    .color-swatch.blue {background-color: blue;}
+    .color-swatch.red {background-color: #EE5252;}
+    .color-swatch.orange {background-color: #F3A253;}
+    .color-swatch.yellow {background-color: #F5EA65;}
+    .color-swatch.green {background-color: #51C17A;}
+    .color-swatch.blue {background-color: #60A3E6;}
 
 
 
