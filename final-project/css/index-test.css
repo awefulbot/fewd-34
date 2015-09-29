@@ -1,13 +1,164 @@
-.ring:after {
-    border-radius: 50%;
-    position: absolute;
-    content: '';
-    top: 50%;
-    left: 50%;
-    width: 2.2em;
-    height: 2.2em;
-    margin-top: -1.1em;
-    margin-left: -1.1em;
-    border: 0.07em solid rgba(160, 147, 130, 0.5);
-    box-sizing: border-box;
+/** ======== RESET ======== **/
+html {
+    background-color: #121B4F;
+    background-image: -webkit-linear-gradient(top right, #050A28, #121B4F); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+    background-image:         linear-gradient(to bottom left, #050A28, #121B4F); /* Chrome 26, Firefox 16+, IE 10+, Opera */
+    height: 100%;
+    width: 100%;
 }
+
+body {background-color: transparent;}
+
+p, h1, h2, h3 {
+    font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+}
+    h1 {
+        font-weight: 100;
+        text-align: center;
+        font-size: 4.5em; /* do 4.5em when closer to finished */
+        margin-top: 0.75em;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #4A90E2;
+    }
+
+    p {
+        font-weight: 200;
+        text-align: center;
+    }
+
+
+/** ======== PLANET COLUMN ======== **/
+    .planet-column {
+        /* padding-top: 5em; */
+        position: relative; /* this is for the size reference div */
+        min-height: 400px;
+        transform-style: preserve-3d;
+    }
+
+    .planet-wrap {
+    }
+
+    .planet-circle {
+        /* testing it out -- should be okay due to CSS codepen ref */
+            position: absolute;
+            transform-style: preserve-3d;
+            top: 50%;
+            left: 50%;
+            /* holy shit this saved my life */
+        border-radius: 600px;
+        margin:0 auto;
+        transform: rotateX(0deg) translateX(-50%) translateY(-50%);
+
+    }
+
+        /** == DEFAULT SETTINGS == **/
+        .default-color {background-color: rgba(255,255,255,0.2);}
+        .default-size {
+            height: 50px;
+            width: 50px;
+        }
+
+
+        /** == COLORS == **/
+        .planet-circle.red { background-color: #EE5252; }
+        .planet-circle.orange { background-color: #F3A253; }
+        .planet-circle.yellow { background-color: #F5EA65; }
+        .planet-circle.green { background-color: #51C17A; }
+        .planet-circle.blue { background-color: #60A3E6; }
+
+        /** == RINGS == **/
+        /* .ring */
+        .ring {
+            content:'';
+            width: 300px;
+            height: 300px;
+            margin-top: -5em;
+            margin-left: -5em;
+            border: 3em solid rgba(160, 147, 130, 0.7);
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform: rotateX(80deg);
+            animation-duration: 353.36998s; /* not sure what this does */
+            /** more stuff **/
+                transition-duration: .8s;
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                border-radius: 50%;
+                top: 35%;
+                left: 35%;
+        }
+            /* actually maybe THIS did ^ */
+
+        .planet-column {
+            transform-style: preserve-3d;
+        }
+
+        /** == PLANET SIZE REFERENCE == **/
+        .planet-size-wrap {
+            height: 100%;
+        }
+        .planet-size-rings {
+            position: absolute;
+
+            /* debug helper */
+            background: rgba(255,0,0,0.05);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .planet-size {
+            border-radius: 100%;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        /** == SIZES == **/
+            .planet-size.pluto { height: 9px; width: 9px; }
+            .planet-size.mercury { height: 22px; width: 22px; }
+            .planet-size.mars { height: 30px; width: 30px; }
+            .planet-size.venus { height: 55px; width: 55px; }
+            .planet-size.earth { height: 58px; width: 58px; }
+            .planet-size.neptune { height: 232px; width: 232px; }
+            .planet-size.uranus { height: 240px; width: 240px; }
+            .planet-size.saturn { height: 548px; width: 548px; }
+            .planet-size.jupiter { height: 675px; width: 675px; }
+
+
+/** ======== CONTROLS COLUMN ======== **/
+
+.color-swatch {
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+    .color-swatch.red {background-color: #EE5252;}
+    .color-swatch.orange {background-color: #F3A253;}
+    .color-swatch.yellow {background-color: #F5EA65;}
+    .color-swatch.green {background-color: #51C17A;}
+    .color-swatch.blue {background-color: #60A3E6;}
+
+
+.control-section {
+    margin-bottom: 35px;
+}
+
+
+/** ======== TESTING ======== **/
+/*
+    .planet-column {background-color: purple;height:300px;}
+    .controls-column {background-color: blue; height:200px;}
+*/

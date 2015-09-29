@@ -136,7 +136,9 @@
                     // this seems to give a rough estimate on size
                     $(".planet-circle").css("height", newPlanetSize).css("width",newPlanetSize);
 
-
+                    // Trying to change the ring size on the fly
+                    var planetRings = document.querySelector(".planet-circle-rings");
+                       // var planetRingWidth = getComputedStyle(planetRings,"::after").getPropertyValue("width");
             });
     </script>
     <script src="js/index.js"></script>

@@ -72,16 +72,14 @@
 
 
 
-    $(".clickable").click(
-        function() {
-            // Size of Mars
-            if ($(".irs-single").text() == "Mars") {
-                // $(".planet-circle").toggleClass("mars");
-                alert("This is the size of Mars");
-            } else {
-                alert("This is not the size of Mars");
-            };
-        }
-    );
+    // $(".clickable").click(
+    //     function() {
+    //         if () {
+    //
+    //         } else {
+    //
+    //         };
+    //     }
+    // );
 
 // Fire an event to respond to the slider value -- use clicks first
