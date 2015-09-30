@@ -80,16 +80,12 @@ $(document).ready(function(){
    // }
 
 
-
-
-    // $(".clickable").click(
-    //     function() {
-    //         if () {
-    //
-    //         } else {
-    //
-    //         };
-    //     }
-    // );
-
-// Fire an event to respond to the slider value -- use clicks first
+// NEXT COURSE OF ACTION
+//     [5] Make the circle sizes light up when the planet approaches that size
+//     [8] Fun facts
+            // 1) sizes (8)
+            // 2) colors (5)
+            // 3) ring (1)
+//  [3] gif for rotation
+//  [] polish for label colors and the title and display and stuff
+//     [] Give the slider different units (label planet sizes on the slider)

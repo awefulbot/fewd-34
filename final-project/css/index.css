@@ -31,6 +31,7 @@ p, h1, h2, h3 {
         text-align: center;
     }
 
+    label { font-weight: 300; }
 
 /** ======== PLANET COLUMN ======== **/
     .planet-column {
@@ -59,8 +60,8 @@ p, h1, h2, h3 {
         /** == DEFAULT SETTINGS == **/
         .default-color {background-color: rgba(255,255,255,0.2);}
         .default-size {
-            height: 50px;
-            width: 50px;
+            height: 195px; /* rough equivalent of 40K */
+            width: 195px;
         }
 
 
@@ -73,24 +74,28 @@ p, h1, h2, h3 {
 
         /** == RINGS == **/
         /* .ring */
-        .planet-circle-rings::after {
+        .ring {
             content:'';
-            width: 300px;
+            width: 400px;
             height: 300px;
-            margin-top: -5em;
-            margin-left: -5em;
-            border: 3em solid rgba(160, 147, 130, 0.7);
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
+            /* margin-top: -5em;
+            margin-left: -5em; */
+            border: 5em solid rgba(255, 255, 255, 0.5);
+            /* animation-iteration-count: infinite;
+            animation-timing-function: linear; */
             transform: rotateX(80deg);
-            animation-duration: 353.36998s; /* not sure what this does */
+            /*animation-duration: 353.36998s; /* not sure what this does */*/
             /** more stuff **/
-                transition-duration: .8s;
-                transition-timing-function: ease-in-out;
+                /*transition-duration: .8s;
+                transition-timing-function: ease-in-out;*/
                 position: absolute;
                 border-radius: 50%;
+                top: -25%;
+                left: -50%;
         }
             /* actually maybe THIS did ^ */
+
+
 
         .planet-column {
             transform-style: preserve-3d;
@@ -104,7 +109,7 @@ p, h1, h2, h3 {
             position: absolute;
 
             /* debug helper */
-            background: rgba(255,0,0,0.2);
+            /* background: rgba(255,0,0,0.05);*/
             top: 0;
             left: 0;
             width: 100%;
@@ -113,7 +118,7 @@ p, h1, h2, h3 {
 
         .planet-size {
             border-radius: 100%;
-            border: 1px solid #999;
+            border: 1px solid rgba(255,255,255,0.2);
             margin: 0 auto;
             position: absolute;
             top: 50%;
@@ -123,14 +128,34 @@ p, h1, h2, h3 {
 
         /** == SIZES == **/
             .planet-size.pluto { height: 9px; width: 9px; }
-            .planet-size.mercury { height: 22px; width: 22px; }
-            .planet-size.mars { height: 30px; width: 30px; }
-            .planet-size.venus { height: 55px; width: 55px; }
-            .planet-size.earth { height: 58px; width: 58px; }
+            .planet-size.mercury { height: 22px; width: 22px; border-color: aqua;}
+            .planet-size.mars { height: 30px; width: 30px; border-color: red;}
+            .planet-size.venus { height: 55px; width: 55px; border-color: orange;}
+            .planet-size.earth { height: 58px; width: 58px; border-color: green;}
             .planet-size.neptune { height: 232px; width: 232px; }
             .planet-size.uranus { height: 240px; width: 240px; }
             .planet-size.saturn { height: 548px; width: 548px; }
             .planet-size.jupiter { height: 675px; width: 675px; }
+
+            .planet-label {
+                font-size: 11px;
+                color: #999;
+                font-family: monospace;
+                text-transform: uppercase;
+                display: inline-block;
+                transform: rotateZ(-40deg);
+                position: relative;
+            }
+
+                /*.pluto .planet-label { top: -10px; left:-10px; }*/
+                .mercury .planet-label { top: 10px; left:0px; }
+                .mars .planet-label { top: -13px; left:-13px; }
+                .venus .planet-label { top: -10px; left:-10px; }
+                .earth .planet-label { top: -15px; left:-15px; }
+                .neptune .planet-label { top: 25px; left:30px; }
+                .uranus .planet-label { top: 0px; left:20px; }
+                .saturn .planet-label { top: 40px; left:70px; }
+                .jupiter .planet-label { top: 60px; left:80px; }
 
 
 /** ======== CONTROLS COLUMN ======== **/
@@ -153,10 +178,3 @@ p, h1, h2, h3 {
 .control-section {
     margin-bottom: 35px;
 }
-
-
-/** ======== TESTING ======== **/
-/*
-    .planet-column {background-color: purple;height:300px;}
-    .controls-column {background-color: blue; height:200px;}
-*/

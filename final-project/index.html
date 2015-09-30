@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- in this test, we're moving the div.ring to become the child of the actual planet div to see if that can help position woes for the ring -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,7 +8,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
     <title>Create a Planet!</title>
 
@@ -15,12 +15,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <!-- <link href="css/index.css" rel="stylesheet"> -->
     <link href="css/index.css" rel="stylesheet">
-    <link href="css/index-test.css" rel="stylesheet">
     <link rel="stylesheet" href="css/ion.rangeSlider.css" />
     <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,200,100' rel='stylesheet' type='text/css'>
-
   </head>
 
   <body>
@@ -37,22 +36,41 @@
                     <div class="planet-wrap">
                         <div class="planet-v-alignment">
                             <div class="planet-circle default-color default-size">
-                                <!-- <div class="ring"></div> -->
+                                <div class="ring"></div>
                             </div>
+                            <!-- <div class="ring"></div> -->
                         </div>
                     </div>
                 <!-- PLANET SIZE REFERENCE RINGS -->
                 <div class="planet-size-wrap">
                     <div class="planet-size-rings">
-                        <div class="planet-size pluto"></div>
-                        <div class="planet-size mercury"></div>
-                        <div class="planet-size mars"></div>
-                        <div class="planet-size venus"></div>
-                        <div class="planet-size earth"></div>
-                        <div class="planet-size neptune"></div>
-                        <div class="planet-size uranus"></div>
-                        <div class="planet-size saturn"></div>
-                        <div class="planet-size jupiter"></div>
+                        <!-- <div class="planet-size pluto">
+                            <span class="planet-label">Pluto</span>
+                        </div> -->
+                        <div class="planet-size mercury">
+                            <span class="planet-label">Mercury</span>
+                        </div>
+                        <div class="planet-size mars">
+                            <span class="planet-label">Mars</span>
+                        </div>
+                        <div class="planet-size venus">
+                            <span class="planet-label">Venus</span>
+                        </div>
+                        <div class="planet-size earth">
+                            <span class="planet-label">Earth</span>
+                        </div>
+                        <div class="planet-size neptune">
+                            <span class="planet-label">Neptune</span>
+                        </div>
+                        <div class="planet-size uranus">
+                            <span class="planet-label">Uranus</span>
+                        </div>
+                        <div class="planet-size saturn">
+                            <span class="planet-label">Saturn</span>
+                        </div>
+                        <div class="planet-size jupiter">
+                            <span class="planet-label">Jupiter</span>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -104,44 +122,57 @@
     <script src="js/ion.rangeSlider.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-
-    <script>
+    <script type="text/javascript">
         // SLIDER JS
-        // $(function () {
-        //     $("#size-slider").ionRangeSlider({
-        //         type: "single",
-        //         values: ["Pluto (Dwarf Planet)","Mercury", "Mars", "Venus", "Earth", "Neptune", "Uranus", "Saturn", "Jupiter"],
-        //
-        //     });
-        //
-        // });
-
-        // REFERENCE
             var $range = $("#size-slider");
 
             $range.ionRangeSlider({
                 type: "single",
                 min: 1000,
                 max: 140000,
-                from: 75000
+                from: 40000,
             });
 
             $range.on("change", function () {
                 var $this = $(this),
                 value = $this.prop("value");
 
-                // console.log("Value: " + value);
                 // need to correlate pixels with size
                 var newPlanetSize = value / 207;
                     // this seems to give a rough estimate on size
                     $(".planet-circle").css("height", newPlanetSize).css("width",newPlanetSize);
 
                     // Trying to change the ring size on the fly
-                    var planetRings = document.querySelector(".planet-circle-rings");
-                       // var planetRingWidth = getComputedStyle(planetRings,"::after").getPropertyValue("width");
+                    var planetRings = document.querySelector(".ring");
+                    var newplanetRingWidth = newPlanetSize * 1.75;
+                    var newplanetRingHeight = newPlanetSize * 1.25;
+
+                    // to center elements, take parent - child / 2
+                        var planetHAlignment = parseInt($(".planet-v-alignment").css("width")); // parent container width
+                        var planetVAlignment = parseInt($(".planet-v-alignment").css("height")); // parent container height
+                        var newX = (planetHAlignment - newplanetRingWidth) / 2;
+                        var newY = (planetVAlignment - newplanetRingHeight) / 2;
+
+                                    $(planetRings).css({
+                                        "height" : newplanetRingHeight + "px",
+                                        "width" : newplanetRingWidth + "px",
+                                        // "left" : newX + "px",
+                                        // "top" : newY +"px",
+                                        "top" :  "-9%",
+                                        "left" : "-35%",
+                                });
+                                console.log(newX, newY);
+                                    // Remember you need to call the variable as a JQ object?
             });
+
     </script>
     <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery.arctext.js"></script>
+    <!-- <script type="text/javascript">
+        var jupiterLabel = $(".planet-label");
+        $(jupiterLabel).arctext({radius: 650, dir: 1});
+
+    </script> -->
 
   </body>
 </html>

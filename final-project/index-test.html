@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- in this test, we're movin the div.ring to become the sibling of the actual planet div to see if that can help position woes and allow us to not use a pseudo-selector for the rings  -->
+<!-- in this test, we're moving the div.ring to become the child of the actual planet div to see if that can help position woes for the ring -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template -->
     <!-- <link href="css/index.css" rel="stylesheet"> -->
-    <link href="css/index-test.css" rel="stylesheet">
+    <link href="css/index-test2.css" rel="stylesheet">
     <link rel="stylesheet" href="css/ion.rangeSlider.css" />
     <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,200,100' rel='stylesheet' type='text/css'>
@@ -38,9 +38,9 @@
                     <div class="planet-wrap">
                         <div class="planet-v-alignment">
                             <div class="planet-circle default-color default-size">
-                                <!-- <div class="ring"></div> -->
+                                <div class="ring"></div>
                             </div>
-                            <div class="ring"></div>
+                            <!-- <div class="ring"></div> -->
                         </div>
                     </div>
                 <!-- PLANET SIZE REFERENCE RINGS -->
@@ -140,14 +140,16 @@
                                     $(planetRings).css({
                                         "height" : newplanetRingHeight + "px",
                                         "width" : newplanetRingWidth + "px",
-                                        "left" : newX + "px",
-                                        "top" : newY +"px",
+                                        // "left" : newX + "px",
+                                        // "top" : newY +"px",
+                                        "top" :  "-9%",
+                                        "left" : "-35%",
                                 });
                                 console.log(newX, newY);
                                     // Remember you need to call the variable as a JQ object?
             });
     </script>
-    <script src="js/index-test.js"></script>
+    <script src="js/index-test2.js"></script>
 
   </body>
 </html>
