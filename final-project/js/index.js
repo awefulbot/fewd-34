@@ -1,8 +1,11 @@
     $("button").click(
         function() {
             $(".starter-template.splash-cover").css({
-                "top" : "-700px",
+                "opacity" : "0",
+                "z-index" : "-10",
             });
+
+            $(".control-section.small-title").css("top", "-200px");
         });
 
 
