@@ -2,10 +2,10 @@
         function() {
             $(".starter-template.splash-cover").css({
                 "opacity" : "0",
-                "z-index" : "-10",
+                "z-index" : "-1",
             });
 
-            $(".control-section.small-title").css("top", "-200px");
+            $(".control-section.small-title").css("top", "-280px");
         });
 
 
@@ -13,32 +13,38 @@
     $(".red").click(
         function() {
                 // alert("this will turn the planet red");
-                $(".planet-circle").addClass("red").removeClass("orange yellow green blue");
+                $(".planet-circle").addClass("red").removeClass("orange yellow green blue transparent");
         });
 
     $(".orange").click(
         function() {
                 // alert("this will turn the planet orange");
-                $(".planet-circle").addClass("orange").removeClass("red yellow green blue");
+                $(".planet-circle").addClass("orange").removeClass("red yellow green blue transparent");
                 //toggleClass
         });
 
     $(".yellow").click(
         function() {
                 // alert("this will turn the planet yellow");
-                $(".planet-circle").addClass("yellow").removeClass("orange red green blue");
+                $(".planet-circle").addClass("yellow").removeClass("orange red green blue transparent");
         });
 
     $(".green").click(
         function() {
                 // alert("this will turn the planet green");
-                $(".planet-circle").addClass("green").removeClass("orange yellow red blue");
+                $(".planet-circle").addClass("green").removeClass("orange yellow red blue transparent");
         });
 
     $(".blue").click(
         function() {
                 // alert("this will turn the planet blue");
-                $(".planet-circle").addClass("blue").removeClass("orange yellow green red");
+                $(".planet-circle").addClass("blue").removeClass("orange yellow green red transparent");
+        });
+
+    $(".transparent").click(
+        function() {
+                // alert("this will turn the planet blue");
+                $(".planet-circle").addClass("transparent").removeClass("orange yellow green red blue");
         });
 
 

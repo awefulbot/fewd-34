@@ -9,14 +9,14 @@ html {
 
 body {background-color: transparent;}
 
-p, h1, h2, h3, .badge {
+p, h1, h2, h3, .badge, button {
     font-family: 'Exo 2', sans-serif;
     color: #ffffff;
 }
     h1 {
         font-weight: 100;
         text-align: center;
-        font-size: 4.5em;
+        font-size: 5em;
         /*margin-top: 0.75em;*/
         margin-bottom: 0.5em;
     }
@@ -28,7 +28,7 @@ p, h1, h2, h3, .badge {
 
     h3 {
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 18px;
         color: #4A90E2;
     }
 
@@ -40,8 +40,9 @@ p, h1, h2, h3, .badge {
     label {
         font-weight: 300;
         color: #fff;
-        margin: 10px;
+        margin-right: 10px;
     }
+        input[type="radio"] {margin: 5px;}
 
     .splash-cover {
         background-color: rgba(0,0,0,0.8);
@@ -61,12 +62,13 @@ p, h1, h2, h3, .badge {
     }
 
     .badge {
-        margin-top: 10em;
-        font-size: 10px;
+        margin-top: 15em;
+        font-size: 12px;
         text-transform: uppercase;
         text-align: center;
         border-radius: 3px;
         background-color: rgba(74,144,266,0.3);
+        padding: 5px 10px 7px;
     }
 
     .lead {
@@ -76,7 +78,7 @@ p, h1, h2, h3, .badge {
         margin-bottom: 20px;
     }
 
-    .spacer { height: 200px;}
+    .spacer { height: 150px;}
 
     button {
         border-radius: 3px;
@@ -84,6 +86,9 @@ p, h1, h2, h3, .badge {
         color: #fff;
         padding: 10px 15px;
         border: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-shadow: 0 2px 0 #D13646;
     }
 
 /** ======== PLANET COLUMN ======== **/
@@ -182,10 +187,10 @@ p, h1, h2, h3, .badge {
             .planet-size.mars { height: 30px; width: 30px; /* border-color: red; */ }
             .planet-size.venus { height: 55px; width: 55px; /* border-color: orange; */ }
             .planet-size.earth { height: 58px; width: 58px; /* border-color: green; */ }
-            .planet-size.neptune { height: 232px; width: 232px; }
-            .planet-size.uranus { height: 240px; width: 240px; }
+            .planet-size.neptune { height: 235px; width: 235px; }
+            .planet-size.uranus { height: 250px; width: 250px; }
             .planet-size.saturn { height: 580px; width: 580px; }
-            .planet-size.jupiter { height: 675px; width: 675px; }
+            .planet-size.jupiter { height: 688px; width: 688px; }
 
             .planet-label {
                 font-size: 11px;
@@ -238,6 +243,7 @@ p, h1, h2, h3, .badge {
     .color-swatch.yellow { background-color: #F5EA65; }
     .color-swatch.green { background-color: #51C17A; }
     .color-swatch.blue { background-color: #60A3E6; }
+    .color-swatch.transparent { background-color: rgba(255,255,255,0.2); }
 
 
 .control-section {

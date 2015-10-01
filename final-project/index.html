@@ -97,6 +97,7 @@
                             <div class="color-swatch yellow"></div>
                             <div class="color-swatch green"></div>
                             <div class="color-swatch blue"></div>
+                            <div class="color-swatch transparent"></div>
                         </div>
                     <!-- Rings / No Rings -->
                         <div class="control-section planet-ring-controls">
@@ -133,7 +134,7 @@
             $range.ionRangeSlider({
                 type: "single",
                 min: 1000,
-                max: 140000,
+                max: 150000,
                 from: 40000,
             });
 
@@ -148,137 +149,142 @@
 
 
                 // MAKING THE RINGS LIGHT UP AS THE SLIDER VALUE APPROACHES IT
-
-                // MERCURY
-                    if ( value >= 3717 && value <= 4105 ) {
-                        $(".planet-size.mercury").css("border" , "3px solid #fff");
-                        $(".mercury .planet-label").css({
-                            "color" : "#fff",
-                            "top" : "8px",
-                            "left" : "-2px",
-                        });
-                    } else {
-                        $(".planet-size.mercury").css("border" , "1px solid rgba(255,255,255,0.2)");
-                        $(".mercury .planet-label").css({
-                            "color" : "rgba(255,255,255,0.2)",
-                            "top" : "10px",
-                            "left" : "0px",
-                        });
-                    };
-                // MARS
-                    if ( value >= 5658 && value <= 6435 ) {
-                        $(".planet-size.mars").css("border" , "3px solid #fff");
-                        $(".mars .planet-label").css({
-                            "color" : "#fff",
-                            "top" : "-15px",
-                            "left" : "-15px",
-                        });
-                    } else {
-                        $(".planet-size.mars").css("border" , "1px solid rgba(255,255,255,0.2)");
-                        $(".mars .planet-label").css({
-                            "color" : "rgba(255,255,255,0.2)",
-                            "top" : "-13px",
-                            "left" : "-13px",
-                        });
-                    };
-                // VENUS
-                    if ( value >= 10318 && value <= 11095 ) {
-                        $(".planet-size.venus").css("border" , "3px solid #fff");
-                        $(".venus .planet-label").css({
-                            "color" : "#fff",
-                            "top" : "-12px",
-                            "left" : "-12px",
-                        });
-                    } else {
-                        $(".planet-size.venus").css("border" , "1px solid rgba(255,255,255,0.2)");
-                        $(".venus .planet-label").css({
-                            "color" : "rgba(255,255,255,0.2)",
-                            "top" : "-10px",
-                            "left" : "-10px",
-                        });
-                    };
-                    // EARTH
-                        if ( value >= 11483 && value <= 12648 ) {
-                            $(".planet-size.earth").css("border" , "3px solid #fff");
-                            $(".earth .planet-label").css({
+                    // MERCURY
+                        if ( value >= 4300 && value <= 4800 ) {
+                            $(".planet-size.mercury").css("border" , "3px solid #fff");
+                            $(".mercury .planet-label").css({
                                 "color" : "#fff",
-                                "top" : "-13px",
-                                "left" : "-13px",
+                                "top" : "8px",
+                                "left" : "-2px",
                             });
                         } else {
-                            $(".planet-size.earth").css("border" , "1px solid rgba(255,255,255,0.2)");
-                            $(".earth .planet-label").css({
+                            $(".planet-size.mercury").css("border" , "1px solid rgba(255,255,255,0.2)");
+                            $(".mercury .planet-label").css({
                                 "color" : "rgba(255,255,255,0.2)",
+                                "top" : "10px",
+                                "left" : "0px",
+                            });
+                        };
+                    // MARS
+                        if ( value >= 6100 && value <= 6900 ) {
+                            $(".planet-size.mars").css("border" , "3px solid #fff");
+                            $(".mars .planet-label").css({
+                                "color" : "#fff",
                                 "top" : "-15px",
                                 "left" : "-15px",
                             });
-                        };
-                    // NEPTUNE
-                        if ( value >= 44659 && value <= 47765 ) {
-                            $(".planet-size.neptune").css("border" , "3px solid #fff");
-                            $(".neptune .planet-label").css({
-                                "color" : "#fff",
-                                "top" : "23px",
-                                "left" : "28px",
-                            });
                         } else {
-                            $(".planet-size.neptune").css("border" , "1px solid rgba(255,255,255,0.2)");
-                            $(".neptune .planet-label").css({
+                            $(".planet-size.mars").css("border" , "1px solid rgba(255,255,255,0.2)");
+                            $(".mars .planet-label").css({
                                 "color" : "rgba(255,255,255,0.2)",
-                                "top" : "25px",
-                                "left" : "30px",
+                                "top" : "-13px",
+                                "left" : "-13px",
                             });
                         };
-                    // URANUS
-                        if ( value >= 48542 && value <= 49707 ) {
-                            $(".planet-size.uranus").css("border" , "3px solid #fff");
-                            $(".uranus .planet-label").css({
+                    // VENUS
+                        if ( value >= 11600 && value <= 12100 ) {
+                            $(".planet-size.venus").css("border" , "3px solid #fff");
+                            $(".venus .planet-label").css({
                                 "color" : "#fff",
-                                "top" : "-2px",
-                                "left" : "18px",
+                                "top" : "-12px",
+                                "left" : "-12px",
                             });
                         } else {
-                            $(".planet-size.uranus").css("border" , "1px solid rgba(255,255,255,0.2)");
-                            $(".uranus .planet-label").css({
+                            $(".planet-size.venus").css("border" , "1px solid rgba(255,255,255,0.2)");
+                            $(".venus .planet-label").css({
                                 "color" : "rgba(255,255,255,0.2)",
-                                "top" : "0px",
-                                "left" : "20px",
+                                "top" : "-10px",
+                                "left" : "-10px",
                             });
                         };
-                    // SATURN
-                        if ( value >= 109888 && value <= 113382 ) {
-                            $(".planet-size.saturn").css("border" , "3px solid #fff");
-                            $(".saturn .planet-label").css({
-                                "color" : "#fff",
-                                "top" : "38px",
-                                "left" : "68px",
-                            });
-                        } else {
-                            $(".planet-size.saturn").css("border" , "1px solid rgba(255,255,255,0.2)");
-                            $(".saturn .planet-label").css({
-                                "color" : "rgba(255,255,255,0.2)",
-                                "top" : "40px",
-                                "left" : "70px",
-                            });
-                        };
-                    // JUPITER
-                        if ( value >= 137460 ) {
-                            $(".planet-size.jupiter").css("border" , "3px solid #fff");
-                            $(".jupiter .planet-label").css({
-                                "color" : "#fff",
-                                "top" : "58px",
-                                "left" : "78px",
-                            });
-                        } else {
-                            // something. Or nothing? You have to cancel it out otherwise that CSS sticks
-                            $(".planet-size.jupiter").css("border" , "1px solid rgba(255,255,255,0.2)");
-                            $(".jupiter .planet-label").css({
-                                "color" : "rgba(255,255,255,0.2)",
-                                "top" : "60px",
-                                "left" : "80px",
-                            });
-                };
+                        // EARTH
+                            if ( value >= 12250 && value <= 12750 ) {
+                                $(".planet-size.earth").css("border" , "3px solid #fff");
+                                $(".earth .planet-label").css({
+                                    "color" : "#fff",
+                                    "top" : "-13px",
+                                    "left" : "-13px",
+                                });
+                            } else {
+                                $(".planet-size.earth").css("border" , "1px solid rgba(255,255,255,0.2)");
+                                $(".earth .planet-label").css({
+                                    "color" : "rgba(255,255,255,0.2)",
+                                    "top" : "-15px",
+                                    "left" : "-15px",
+                                });
+                            };
+                        // NEPTUNE
+                            if ( value >= 49000 && value <= 49500 ) {
+                                $(".planet-size.neptune").css("border" , "3px solid #fff");
+                                $(".neptune .planet-label").css({
+                                    "color" : "#fff",
+                                    "top" : "23px",
+                                    "left" : "28px",
+                                });
+                            } else {
+                                $(".planet-size.neptune").css("border" , "1px solid rgba(255,255,255,0.2)");
+                                $(".neptune .planet-label").css({
+                                    "color" : "rgba(255,255,255,0.2)",
+                                    "top" : "25px",
+                                    "left" : "30px",
+                                });
+                            };
+                        // URANUS
+                            if ( value >= 51300 && value <= 51800 ) {
+                                $(".planet-size.uranus").css("border" , "3px solid #fff");
+                                $(".uranus .planet-label").css({
+                                    "color" : "#fff",
+                                    "top" : "-2px",
+                                    "left" : "18px",
+                                });
+                            } else {
+                                $(".planet-size.uranus").css("border" , "1px solid rgba(255,255,255,0.2)");
+                                $(".uranus .planet-label").css({
+                                    "color" : "rgba(255,255,255,0.2)",
+                                    "top" : "0px",
+                                    "left" : "20px",
+                                });
+                            };
+                        // SATURN
+                            if ( value >= 119600 && value <= 120660 ) {
+                                $(".planet-size.saturn").css("border" , "3px solid #fff");
+                                $(".saturn .planet-label").css({
+                                    "color" : "#fff",
+                                    "top" : "38px",
+                                    "left" : "68px",
+                                });
+                            } else {
+                                $(".planet-size.saturn").css("border" , "1px solid rgba(255,255,255,0.2)");
+                                $(".saturn .planet-label").css({
+                                    "color" : "rgba(255,255,255,0.2)",
+                                    "top" : "40px",
+                                    "left" : "70px",
+                                });
+                            };
+                        // JUPITER
+                            if ( value >= 142000 && value <= 142800 ) {
+                                $(".planet-size.jupiter").css("border" , "3px solid #fff");
+                                $(".jupiter .planet-label").css({
+                                    "color" : "#fff",
+                                    "top" : "58px",
+                                    "left" : "78px",
+                                });
+                            } else {
+                                // something. Or nothing? You have to cancel it out otherwise that CSS sticks
+                                $(".planet-size.jupiter").css("border" , "1px solid rgba(255,255,255,0.2)");
+                                $(".jupiter .planet-label").css({
+                                    "color" : "rgba(255,255,255,0.2)",
+                                    "top" : "60px",
+                                    "left" : "80px",
+                                });
+                    };
 
+                    // Disabling rings
+                        if ( value <= 36591 ) {
+                            $(".ring").hide();
+                        } else {
+                            //
+                        };
 
 
                     // Trying to change the ring size on the fly
