@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- in this test, we're moving the div.ring to become the child of the actual planet div to see if that can help position woes for the ring -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -25,58 +24,62 @@
   <body>
 
     <div class="container">
-        <div class="starter-template">
-            <h1>Planet Generator</h1>
-                <p class="lead">Visualize a planet and learn some fun facts 🚀</p>
-                <!--p class="lead">A FEWD-34 Project</p-->
+        <div class="starter-template splash-cover">
+            <span class="badge">
+                A FEWD-34 PROJECT
+            </span>
+            <h1>Planet Visualizer</h1>
+                <p class="lead">I made this project as a playground to try out making an interactive and animated interface, while using space as a theme. <br/>
+                Hope you guys have fun! &nbsp; 🚀</p>
+                <button>Try it out</button>
         </div>
+        <div class="row spacer"></div>
         <div class="row">
             <!-- PLANET -->
-                <div class="col-md-7 planet-column">
+                <div class="col-md-9 planet-column">
                     <div class="planet-wrap">
                         <div class="planet-v-alignment">
                             <div class="planet-circle default-color default-size">
                                 <div class="ring"></div>
                             </div>
-                            <!-- <div class="ring"></div> -->
                         </div>
                     </div>
                 <!-- PLANET SIZE REFERENCE RINGS -->
-                <div class="planet-size-wrap">
-                    <div class="planet-size-rings">
-                        <!-- <div class="planet-size pluto">
-                            <span class="planet-label">Pluto</span>
-                        </div> -->
-                        <div class="planet-size mercury">
-                            <span class="planet-label">Mercury</span>
-                        </div>
-                        <div class="planet-size mars">
-                            <span class="planet-label">Mars</span>
-                        </div>
-                        <div class="planet-size venus">
-                            <span class="planet-label">Venus</span>
-                        </div>
-                        <div class="planet-size earth">
-                            <span class="planet-label">Earth</span>
-                        </div>
-                        <div class="planet-size neptune">
-                            <span class="planet-label">Neptune</span>
-                        </div>
-                        <div class="planet-size uranus">
-                            <span class="planet-label">Uranus</span>
-                        </div>
-                        <div class="planet-size saturn">
-                            <span class="planet-label">Saturn</span>
-                        </div>
-                        <div class="planet-size jupiter">
-                            <span class="planet-label">Jupiter</span>
+                    <div class="planet-size-wrap">
+                        <div class="planet-size-rings">
+                            <!-- <div class="planet-size pluto">
+                                <span class="planet-label">Pluto</span>
+                            </div> -->
+                            <div class="planet-size mercury">
+                                <span class="planet-label">Mercury</span>
+                            </div>
+                            <div class="planet-size mars">
+                                <span class="planet-label">Mars</span>
+                            </div>
+                            <div class="planet-size venus">
+                                <span class="planet-label">Venus</span>
+                            </div>
+                            <div class="planet-size earth">
+                                <span class="planet-label">Earth</span>
+                            </div>
+                            <div class="planet-size neptune">
+                                <span class="planet-label">Neptune</span>
+                            </div>
+                            <div class="planet-size uranus">
+                                <span class="planet-label">Uranus</span>
+                            </div>
+                            <div class="planet-size saturn">
+                                <span class="planet-label">Saturn</span>
+                            </div>
+                            <div class="planet-size jupiter">
+                                <span class="planet-label">Jupiter</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                </div>
+                    </div>
             <!-- /PLANET -->
             <!-- CONTROLS -->
-                <div class="col-md-5 controls-column">
+                <div class="col-md-3 controls-column">
                     <!-- Slider for SIZE -->
                         <div class="control-section planet-size-control">
                             <h3>Size</h3>
@@ -113,7 +116,26 @@
         </div>
 
 </div><!-- /.container -->
-
+<!-- <div class="pop-ups-container">
+    <div class="pop-ups red">
+        <h3>Why is a planet <strong>red</strong>?</h3>
+    </div>
+    <div class="pop-ups orange">
+        <h3>Why is a planet <strong>orange</strong>?</h3>
+    </div>
+    <div class="pop-ups yellow">
+        <h3>Why is a planet <strong>yellow</strong>?</h3>
+    </div>
+    <div class="pop-ups green">
+        <h3>Why is a planet <strong>green</strong>?</h3>
+    </div>
+    <div class="pop-ups blue">
+        <h3>Why is a planet <strong>blue</strong>?</h3>
+    </div>
+    <div class="pop-ups rings-info">
+        <h3>What are the <strong>rings</strong> around a planet made out of?</h3>
+    </div>
+</div> -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -142,6 +164,141 @@
                     // this seems to give a rough estimate on size
                     $(".planet-circle").css("height", newPlanetSize).css("width",newPlanetSize);
 
+
+                // MAKING THE RINGS LIGHT UP AS THE SLIDER VALUE APPROACHES IT
+
+                // MERCURY
+                    if ( value >= 3717 && value <= 4105 ) {
+                        $(".planet-size.mercury").css("border" , "3px solid #fff");
+                        $(".mercury .planet-label").css({
+                            "color" : "#fff",
+                            "top" : "8px",
+                            "left" : "-2px",
+                        });
+                    } else {
+                        $(".planet-size.mercury").css("border" , "1px solid rgba(255,255,255,0.2)");
+                        $(".mercury .planet-label").css({
+                            "color" : "rgba(255,255,255,0.2)",
+                            "top" : "10px",
+                            "left" : "0px",
+                        });
+                    };
+                // MARS
+                    if ( value >= 5658 && value <= 6435 ) {
+                        $(".planet-size.mars").css("border" , "3px solid #fff");
+                        $(".mars .planet-label").css({
+                            "color" : "#fff",
+                            "top" : "-15px",
+                            "left" : "-15px",
+                        });
+                    } else {
+                        $(".planet-size.mars").css("border" , "1px solid rgba(255,255,255,0.2)");
+                        $(".mars .planet-label").css({
+                            "color" : "rgba(255,255,255,0.2)",
+                            "top" : "-13px",
+                            "left" : "-13px",
+                        });
+                    };
+                // VENUS
+                    if ( value >= 10318 && value <= 11095 ) {
+                        $(".planet-size.venus").css("border" , "3px solid #fff");
+                        $(".venus .planet-label").css({
+                            "color" : "#fff",
+                            "top" : "-12px",
+                            "left" : "-12px",
+                        });
+                    } else {
+                        $(".planet-size.venus").css("border" , "1px solid rgba(255,255,255,0.2)");
+                        $(".venus .planet-label").css({
+                            "color" : "rgba(255,255,255,0.2)",
+                            "top" : "-10px",
+                            "left" : "-10px",
+                        });
+                    };
+                    // EARTH
+                        if ( value >= 11483 && value <= 12648 ) {
+                            $(".planet-size.earth").css("border" , "3px solid #fff");
+                            $(".earth .planet-label").css({
+                                "color" : "#fff",
+                                "top" : "-13px",
+                                "left" : "-13px",
+                            });
+                        } else {
+                            $(".planet-size.earth").css("border" , "1px solid rgba(255,255,255,0.2)");
+                            $(".earth .planet-label").css({
+                                "color" : "rgba(255,255,255,0.2)",
+                                "top" : "-15px",
+                                "left" : "-15px",
+                            });
+                        };
+                    // NEPTUNE
+                        if ( value >= 44659 && value <= 47765 ) {
+                            $(".planet-size.neptune").css("border" , "3px solid #fff");
+                            $(".neptune .planet-label").css({
+                                "color" : "#fff",
+                                "top" : "23px",
+                                "left" : "28px",
+                            });
+                        } else {
+                            $(".planet-size.neptune").css("border" , "1px solid rgba(255,255,255,0.2)");
+                            $(".neptune .planet-label").css({
+                                "color" : "rgba(255,255,255,0.2)",
+                                "top" : "25px",
+                                "left" : "30px",
+                            });
+                        };
+                    // URANUS
+                        if ( value >= 48542 && value <= 49707 ) {
+                            $(".planet-size.uranus").css("border" , "3px solid #fff");
+                            $(".uranus .planet-label").css({
+                                "color" : "#fff",
+                                "top" : "-2px",
+                                "left" : "18px",
+                            });
+                        } else {
+                            $(".planet-size.uranus").css("border" , "1px solid rgba(255,255,255,0.2)");
+                            $(".uranus .planet-label").css({
+                                "color" : "rgba(255,255,255,0.2)",
+                                "top" : "0px",
+                                "left" : "20px",
+                            });
+                        };
+                    // SATURN
+                        if ( value >= 109888 && value <= 113382 ) {
+                            $(".planet-size.saturn").css("border" , "3px solid #fff");
+                            $(".saturn .planet-label").css({
+                                "color" : "#fff",
+                                "top" : "38px",
+                                "left" : "68px",
+                            });
+                        } else {
+                            $(".planet-size.saturn").css("border" , "1px solid rgba(255,255,255,0.2)");
+                            $(".saturn .planet-label").css({
+                                "color" : "rgba(255,255,255,0.2)",
+                                "top" : "40px",
+                                "left" : "70px",
+                            });
+                        };
+                    // JUPITER
+                        if ( value >= 137460 ) {
+                            $(".planet-size.jupiter").css("border" , "3px solid #fff");
+                            $(".jupiter .planet-label").css({
+                                "color" : "#fff",
+                                "top" : "58px",
+                                "left" : "78px",
+                            });
+                        } else {
+                            // something. Or nothing? You have to cancel it out otherwise that CSS sticks
+                            $(".planet-size.jupiter").css("border" , "1px solid rgba(255,255,255,0.2)");
+                            $(".jupiter .planet-label").css({
+                                "color" : "rgba(255,255,255,0.2)",
+                                "top" : "60px",
+                                "left" : "80px",
+                            });
+                };
+
+
+
                     // Trying to change the ring size on the fly
                     var planetRings = document.querySelector(".ring");
                     var newplanetRingWidth = newPlanetSize * 1.75;
@@ -167,12 +324,6 @@
 
     </script>
     <script src="js/index.js"></script>
-    <script type="text/javascript" src="js/jquery.arctext.js"></script>
-    <!-- <script type="text/javascript">
-        var jupiterLabel = $(".planet-label");
-        $(jupiterLabel).arctext({radius: 650, dir: 1});
-
-    </script> -->
 
   </body>
 </html>

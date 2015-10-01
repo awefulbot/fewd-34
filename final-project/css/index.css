@@ -3,21 +3,22 @@ html {
     background-color: #121B4F;
     background-image: -webkit-linear-gradient(top right, #050A28, #121B4F); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
     background-image:         linear-gradient(to bottom left, #050A28, #121B4F); /* Chrome 26, Firefox 16+, IE 10+, Opera */
-    height: 100%;
+    height: 720px;
     width: 100%;
 }
 
 body {background-color: transparent;}
 
-p, h1, h2, h3 {
+p, h1, h2, h3, .badge {
     font-family: 'Exo 2', sans-serif;
     color: #ffffff;
 }
     h1 {
         font-weight: 100;
         text-align: center;
-        font-size: 4.5em; /* do 4.5em when closer to finished */
-        margin-top: 0.75em;
+        font-size: 4.5em;
+        /*margin-top: 0.75em;*/
+        margin-bottom: 0.5em;
     }
 
     h3 {
@@ -33,9 +34,49 @@ p, h1, h2, h3 {
 
     label { font-weight: 300; }
 
+    .splash-cover {
+        background-color: rgba(0,0,0,0.8);
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+
+
+    .starter-template.splash-cover {
+        text-align: center;
+        -webkit-transition: all 0.5s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+          transition: all 0.5s ease-out;
+    }
+
+    .badge {
+        margin-top: 10em;
+        font-size: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        border-radius: 3px;
+        background-color: #4A90E2;
+    }
+
+    .lead {
+        width: 650px;
+        margin: 0 auto;
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+
+    .spacer { height: 200px;}
+
+    button {
+        border-radius: 3px;
+        background-color: #ed5565;
+        padding: 10px 15px;
+    }
+
 /** ======== PLANET COLUMN ======== **/
     .planet-column {
-        /* padding-top: 5em; */
         position: relative; /* this is for the size reference div */
         min-height: 400px;
         transform-style: preserve-3d;
@@ -78,13 +119,11 @@ p, h1, h2, h3 {
             content:'';
             width: 400px;
             height: 300px;
-            /* margin-top: -5em;
-            margin-left: -5em; */
             border: 5em solid rgba(255, 255, 255, 0.5);
             /* animation-iteration-count: infinite;
             animation-timing-function: linear; */
             transform: rotateX(80deg);
-            /*animation-duration: 353.36998s; /* not sure what this does */*/
+            /* animation-duration: 353.36998s; /* not sure what this does */
             /** more stuff **/
                 /*transition-duration: .8s;
                 transition-timing-function: ease-in-out;*/
@@ -105,9 +144,9 @@ p, h1, h2, h3 {
         .planet-size-wrap {
             height: 100%;
         }
+
         .planet-size-rings {
             position: absolute;
-
             /* debug helper */
             /* background: rgba(255,0,0,0.05);*/
             top: 0;
@@ -128,10 +167,10 @@ p, h1, h2, h3 {
 
         /** == SIZES == **/
             .planet-size.pluto { height: 9px; width: 9px; }
-            .planet-size.mercury { height: 22px; width: 22px; border-color: aqua;}
-            .planet-size.mars { height: 30px; width: 30px; border-color: red;}
-            .planet-size.venus { height: 55px; width: 55px; border-color: orange;}
-            .planet-size.earth { height: 58px; width: 58px; border-color: green;}
+            .planet-size.mercury { height: 22px; width: 22px; /* border-color: aqua; */ }
+            .planet-size.mars { height: 30px; width: 30px; /* border-color: red; */ }
+            .planet-size.venus { height: 55px; width: 55px; /* border-color: orange; */ }
+            .planet-size.earth { height: 58px; width: 58px; /* border-color: green; */ }
             .planet-size.neptune { height: 232px; width: 232px; }
             .planet-size.uranus { height: 240px; width: 240px; }
             .planet-size.saturn { height: 548px; width: 548px; }
@@ -139,7 +178,7 @@ p, h1, h2, h3 {
 
             .planet-label {
                 font-size: 11px;
-                color: #999;
+                color: rgba(255,255,255,0.2);
                 font-family: monospace;
                 text-transform: uppercase;
                 display: inline-block;
@@ -161,18 +200,18 @@ p, h1, h2, h3 {
 /** ======== CONTROLS COLUMN ======== **/
 
 .color-swatch {
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
     border-radius: 100%;
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 5px;
     cursor: pointer;
 }
-    .color-swatch.red {background-color: #EE5252;}
-    .color-swatch.orange {background-color: #F3A253;}
-    .color-swatch.yellow {background-color: #F5EA65;}
-    .color-swatch.green {background-color: #51C17A;}
-    .color-swatch.blue {background-color: #60A3E6;}
+    .color-swatch.red { background-color: #EE5252; }
+    .color-swatch.orange { background-color: #F3A253; }
+    .color-swatch.yellow { background-color: #F5EA65; }
+    .color-swatch.green { background-color: #51C17A; }
+    .color-swatch.blue { background-color: #60A3E6; }
 
 
 .control-section {

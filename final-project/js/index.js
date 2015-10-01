@@ -1,3 +1,11 @@
+    $("button").click(
+        function() {
+            $(".starter-template.splash-cover").css({
+                "top" : "-700px",
+            });
+        });
+
+
 
     $(".red").click(
         function() {
@@ -36,11 +44,9 @@
 $(document).ready(function(){
     if ($("#no-rings").prop("checked", true)) {
         $(".ring").hide();
-        // alert("Hello");
     }
     else {
         $(".ring").show();
-        // alert("Goodbye");
     }
 });
     $("#rings").click(
