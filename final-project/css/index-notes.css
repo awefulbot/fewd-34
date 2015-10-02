@@ -17,6 +17,7 @@ p, h1, h2, h3, .badge, button {
         font-weight: 100;
         text-align: center;
         font-size: 5em;
+        /*margin-top: 0.75em;*/
         margin-bottom: 0.5em;
     }
 
@@ -97,16 +98,19 @@ p, h1, h2, h3, .badge, button {
         transform-style: preserve-3d;
     }
 
+    .planet-wrap {
+    }
 
     .planet-circle {
         /* testing it out -- should be okay due to CSS codepen ref */
             position: absolute;
-            transform-style: preserve-3d; /* holy smokes this saved my life */
+            transform-style: preserve-3d;
             top: 50%;
             left: 50%;
-            border-radius: 600px;
-            margin:0 auto;
-            transform: rotateX(0deg) translateX(-50%) translateY(-50%);
+            /* holy shit this saved my life */
+        border-radius: 600px;
+        margin:0 auto;
+        transform: rotateX(0deg) translateX(-50%) translateY(-50%);
 
     }
 
@@ -132,16 +136,25 @@ p, h1, h2, h3, .badge, button {
             width: 400px;
             height: 300px;
             border: 5em solid rgba(255, 255, 255, 0.5);
+            /* animation-iteration-count: infinite;
+            animation-timing-function: linear; */
             transform: rotateX(80deg);
-            position: absolute;
-            border-radius: 50%;
-            top: -25%;
-            left: -50%;
+            /* animation-duration: 353.36998s; /* not sure what this does */
+            /** more stuff **/
+                /*transition-duration: .8s;
+                transition-timing-function: ease-in-out;*/
+                position: absolute;
+                border-radius: 50%;
+                top: -25%;
+                left: -50%;
         }
+            /* actually maybe THIS did ^ */
 
-        /*.planet-column {
+
+
+        .planet-column {
             transform-style: preserve-3d;
-        }*/
+        }
 
         /** == PLANET SIZE REFERENCE == **/
         .planet-size-wrap {
@@ -150,6 +163,8 @@ p, h1, h2, h3, .badge, button {
 
         .planet-size-rings {
             position: absolute;
+            /* debug helper */
+            /* background: rgba(255,0,0,0.05);*/
             top: 0;
             left: 0;
             width: 100%;
@@ -168,10 +183,10 @@ p, h1, h2, h3, .badge, button {
 
         /** == SIZES == **/
             .planet-size.pluto { height: 9px; width: 9px; }
-            .planet-size.mercury { height: 22px; width: 22px; }
-            .planet-size.mars { height: 30px; width: 30px; }
-            .planet-size.venus { height: 55px; width: 55px; }
-            .planet-size.earth { height: 58px; width: 58px; }
+            .planet-size.mercury { height: 22px; width: 22px; /* border-color: aqua; */ }
+            .planet-size.mars { height: 30px; width: 30px; /* border-color: red; */ }
+            .planet-size.venus { height: 55px; width: 55px; /* border-color: orange; */ }
+            .planet-size.earth { height: 58px; width: 58px; /* border-color: green; */ }
             .planet-size.neptune { height: 235px; width: 235px; }
             .planet-size.uranus { height: 250px; width: 250px; }
             .planet-size.saturn { height: 580px; width: 580px; }
@@ -187,6 +202,7 @@ p, h1, h2, h3, .badge, button {
                 position: relative;
             }
 
+                /*.pluto .planet-label { top: -10px; left:-10px; }*/
                 .mercury .planet-label { top: 10px; left:0px; }
                 .mars .planet-label { top: -13px; left:-13px; }
                 .venus .planet-label { top: -10px; left:-10px; }
