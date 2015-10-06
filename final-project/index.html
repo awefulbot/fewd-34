@@ -11,7 +11,7 @@
     <title>Planet Visualizer</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="css/index.css" rel="stylesheet"> -->
@@ -29,9 +29,13 @@
                 A FEWD-34 PROJECT
             </span>
             <h1>Planet Visualizer</h1>
-                <p class="lead">I made this project as a playground to try out making an interactive interface, while using space as a theme. <br/>
-                Hope you guys have fun! &nbsp; 🚀</p>
+                <p class="lead">I made this project as a playground to try out making an interactive interface, while using space as a theme. Hope you guys have fun! &nbsp; 🚀
+                </p>
+                <p class="projects-note">
+                    Due to the use of some CSS that is still in <a class="experimental" data-toggle="tooltip" data-placement="right" title="The Mozilla Developer Network considers CSS Transforms to be experimental technology; the specifications for expected behavior has yet to be stabilized.">experimental stages*</a>, <br />this project is best viewed in Chrome or Safari.
+                </p>
                 <button>Try it out</button>
+
         </div>
         <div class="row spacer"></div>
         <div class="row">
@@ -114,11 +118,15 @@
                             <h3>Axis of Rotation</h3>
                             <input type="text" id="size-slider" name="example_name" value="" />
                         </div-->
+                    <!-- Credits Note -->
+                        <div class="credits">
+                            <p>This project was built using HTML5, CSS3, JQuery, Atom, and the <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">ion.RangeSlider Jquery Plugin<a/></p>
+                        </div>
                 </div>
             <!-- /CONTROLS -->
         </div>
 
-</div><!-- /.container -->
+    </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -128,6 +136,11 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+        // Tooltip
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      });
+
         // SLIDER JS
             var $range = $("#size-slider");
 
