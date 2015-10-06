@@ -3,7 +3,11 @@ html {
     background-color: #121B4F;
     background-image: -webkit-linear-gradient(top right, #050A28, #121B4F); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
     background-image:         linear-gradient(to bottom left, #050A28, #121B4F); /* Chrome 26, Firefox 16+, IE 10+, Opera */
-    height: 720px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100%; /* needed to make the background gradient extend full height of the screen */
     width: 100%;
 }
 
@@ -99,7 +103,6 @@ p, h1, h2, h3, .badge, button {
 
 
     .planet-circle {
-        /* testing it out -- should be okay due to CSS codepen ref */
             position: absolute;
             transform-style: preserve-3d; /* holy smokes this saved my life */
             top: 50%;
@@ -130,9 +133,8 @@ p, h1, h2, h3, .badge, button {
         .planet-circle.blue { background-color: #60A3E6; }
 
         /** == RINGS == **/
-        /* .ring */
         .ring {
-            content:'';
+            /* content:'';*/
             width: 400px;
             height: 300px;
             border: 5em solid rgba(255, 255, 255, 0.5);
@@ -143,9 +145,9 @@ p, h1, h2, h3, .badge, button {
             left: -50%;
         }
 
-        /*.planet-column {
+        .planet-column {
             transform-style: preserve-3d;
-        }*/
+        }
 
         /** == PLANET SIZE REFERENCE == **/
         .planet-size-wrap {

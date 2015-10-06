@@ -293,21 +293,21 @@
                     var newplanetRingHeight = newPlanetSize * 1.25;
 
                     // to center elements, take parent - child / 2
-                        var planetHAlignment = parseInt($(".planet-v-alignment").css("width")); // parent container width
-                        var planetVAlignment = parseInt($(".planet-v-alignment").css("height")); // parent container height
-                        var newX = (planetHAlignment - newplanetRingWidth) / 2;
-                        var newY = (planetVAlignment - newplanetRingHeight) / 2;
+                        // var planetHAlignment = parseInt($(".planet-v-alignment").css("width")); // parent container width
+                        // var planetVAlignment = parseInt($(".planet-v-alignment").css("height")); // parent container height
+                        // var newX = (planetHAlignment - newplanetRingWidth) / 2;
+                        // var newY = (planetVAlignment - newplanetRingHeight) / 2;
 
                                     $(planetRings).css({
                                         "height" : newplanetRingHeight + "px",
                                         "width" : newplanetRingWidth + "px",
-                                        // "left" : newX + "px",
-                                        // "top" : newY +"px",
                                         "top" :  "-9%",
                                         "left" : "-35%",
                                 });
-                                // console.log(newX, newY);
-                                    // Remember you need to call the variable as a JQ object?
+
+                                // Fixing wonky ring behavior when
+
+
             });
 
     </script>
