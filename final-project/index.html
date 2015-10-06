@@ -279,24 +279,11 @@
                                 });
                     };
 
-                    // Disabling rings so
-                        // if ( value <= 36591 ) {
-                        //     $(".ring").hide();
-                        // } else {
-                        //     //
-                        // };
-
 
                     // Trying to change the ring size on the fly
                     var planetRings = document.querySelector(".ring");
                     var newplanetRingWidth = newPlanetSize * 1.75;
                     var newplanetRingHeight = newPlanetSize * 1.25;
-
-                    // to center elements, take parent - child / 2
-                        // var planetHAlignment = parseInt($(".planet-v-alignment").css("width")); // parent container width
-                        // var planetVAlignment = parseInt($(".planet-v-alignment").css("height")); // parent container height
-                        // var newX = (planetHAlignment - newplanetRingWidth) / 2;
-                        // var newY = (planetVAlignment - newplanetRingHeight) / 2;
 
                                     $(planetRings).css({
                                         "height" : newplanetRingHeight + "px",
@@ -304,8 +291,27 @@
                                         "top" :  "-9%",
                                         "left" : "-35%",
                                 });
+                                if ( value >= 50000 && value < 150000) {
+                                    $(planetRings).css("border-width", "7em");
+                                } else if ( value >= 30348 && value < 50000) {
+                                    $(planetRings).css("border-width", "3em");
+                                }
+                                // Fixing wonky ring behavior when slider hits 33,365
+                                else if ( value >= 11648 && value <= 30348 ) {
+                                    var smallplanetRingWidth = newPlanetSize * 2.25;
 
-                                // Fixing wonky ring behavior when
+                                    $(planetRings).css({
+                                        // "height" : newplanetRingHeight + "px",
+                                        "width" : smallplanetRingWidth + "px",
+                                        "border-width" : "2.5em",
+                                        "top" :  "-9%",
+                                        "left" : "-60%",
+                                    });
+                                } else if ( value >= 7425 && value <= 11648) {
+                                    $(planetRings).css("border-width", "1em");
+                                } else if ( value >= 1000 && value <= 7425) {
+                                    $(planetRings).css("border-width", "0.25em")
+                                };
 
 
             });
