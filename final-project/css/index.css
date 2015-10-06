@@ -106,6 +106,10 @@ p, h1, h2, h3, .badge, button {
             left: 50%;
             border-radius: 600px;
             margin:0 auto;
+            -ms-transform: rotateX(0deg) translateX(-50%) translateY(-50%);
+            -webkit-transform: rotateX(0deg) translateX(-50%) translateY(-50%);
+            -moz-transform: rotateX(0deg) translateX(-50%) translateY(-50%);
+            -o-transform: rotateX(0deg) translateX(-50%) translateY(-50%);
             transform: rotateX(0deg) translateX(-50%) translateY(-50%);
 
     }
@@ -163,7 +167,12 @@ p, h1, h2, h3, .badge, button {
             position: absolute;
             top: 50%;
             left: 50%;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -o-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
+
         }
 
         /** == SIZES == **/
